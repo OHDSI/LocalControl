@@ -796,7 +796,7 @@ void *lcThreadOp(void *params){
 int runLocalControl(LocalController &lci){
 
   int nt = lci.getThreadCount();
-  pthread_t threads[nt];
+  pthread_t *threads = new pthread_t[nt];
 
   lci.initLC();
 
@@ -823,6 +823,7 @@ int runLocalControl(LocalController &lci){
     pthread_join(threads[i], NULL);
   }
 
+  delete [] threads;
   return 0;
 
 }
