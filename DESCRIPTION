@@ -25,6 +25,6 @@ Imports: Rcpp, gss, cluster, lattice, stats, graphics
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
 Packaged: 2017-05-15 20:15:30 UTC; lambert
-Depends: R (>= 2.10)
+Depends: R (>= 3.0.0)
 Repository: CRAN
 Date/Publication: 2017-05-16 04:42:54 UTC
