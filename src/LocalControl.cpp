@@ -810,7 +810,7 @@ int runLocalControl(LocalController &lci){
 
     if(rc){
       Rcerr << "Error: unable to create thread, " << rc << "\n";
-      return -1;
+      return -1; // TODO This can cause a memory leak (threads); suggest std::vector<pthread_t>
     }
 
     lci.addThread();
