@@ -1,0 +1,22 @@
+language: R
+cache: packages
+sudo: false
+
+r_packages:
+  - covr
+  - drat
+
+before_install:
+  - Rscript -e 'update.packages(ask = FALSE)'
+
+notifications:
+  recipients:
+  - msuchard@gmail.com
+  - schuemie@ohdsi.org
+  - cglambert@unm.edu
+  email:
+    on_success: change
+    on_failure: change
+
+after_success:
+  - Rscript -e 'covr::codecov()'

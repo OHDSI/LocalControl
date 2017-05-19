@@ -4,9 +4,7 @@ LocalControl
 Introduction
 ============
 
-LocalControl is an R package implementing novel nonparametric approaches to address
-biases and confounding when comparing treatments or exposures in
-observational studies of outcomes.
+LocalControl is an R package implementing novel nonparametric approaches to address biases and confounding when comparing treatments or exposures in observational studies of outcomes.
 
 See R help pages for examples on how to run each of the package functions.
 
@@ -19,3 +17,13 @@ Getting Involved
 License
 =======
 LocalControl is licensed under Apache License 2.0
+
+Development
+===========
+
+### Development status
+
+[![Build Status](https://travis-ci.org/OHDSI/LocalControl.svg?branch=master)](https://travis-ci.org/OHDSI/LocalControl)
+[![codecov.io](https://codecov.io/github/OHDSI/LocalControl/coverage.svg?branch=master)](https://codecov.io/github/OHDSI/LocalControl?branch=master)
+
+Stable? (Let people know what their expectations should be)
