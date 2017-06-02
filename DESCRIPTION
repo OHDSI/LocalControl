@@ -1,7 +1,6 @@
 Package: LocalControl
 Type: Package
-Title: Local Control: An R Package for Generating High Quality
-        Comparative Effectiveness Evidence
+Title: Nonparametric Methods for Generating High Quality Comparative Effectiveness Evidence
 Version: 1.0.1
 Date: 2017-06-02
 Author: Nicolas R. Lauve, Stuart J. Nelson, S. Stanley Young, Robert L. Obenchain, Christophe G. Lambert
