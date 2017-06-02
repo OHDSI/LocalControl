@@ -796,7 +796,8 @@ void *lcThreadOp(void *params){
 int runLocalControl(LocalController &lci){
 
   int nt = lci.getThreadCount();
-  pthread_t *threads = new pthread_t[nt];
+
+  std::vector<pthread_t> threads = std::vector<pthread_t>(nt);
 
   lci.initLC();
 
@@ -810,7 +811,7 @@ int runLocalControl(LocalController &lci){
 
     if(rc){
       Rcerr << "Error: unable to create thread, " << rc << "\n";
-      return -1; // TODO This can cause a memory leak (threads); suggest std::vector<pthread_t>
+      return -1;
     }
 
     lci.addThread();
@@ -823,7 +824,6 @@ int runLocalControl(LocalController &lci){
     pthread_join(threads[i], NULL);
   }
 
-  delete [] threads;
   return 0;
 
 }

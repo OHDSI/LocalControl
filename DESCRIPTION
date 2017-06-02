@@ -2,8 +2,8 @@ Package: LocalControl
 Type: Package
 Title: Local Control: An R Package for Generating High Quality
         Comparative Effectiveness Evidence
-Version: 1.0.0
-Date: 2017-05-13
+Version: 1.0.1
+Date: 2017-06-02
 Author: Nicolas R. Lauve, Stuart J. Nelson, S. Stanley Young, Robert L. Obenchain, Christophe G. Lambert
 Maintainer: Christophe G. Lambert <cglambert@unm.edu>
 Description: Implements novel nonparametric approaches to address
@@ -17,14 +17,12 @@ Description: Implements novel nonparametric approaches to address
     The approach extends to bias-corrected personalized predictions of
     treatment outcome differences, and analysis of heterogeneity of treatment
     effect-sizes across patient subgroups.
-License: Apache License 2.0
+License: Apache License 2.0 | file LICENSE
 SystemRequirements: C++11
 LazyData: TRUE
 LinkingTo: Rcpp
 Imports: Rcpp, gss, cluster, lattice, stats, graphics
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2017-05-15 20:15:30 UTC; lambert
 Depends: R (>= 3.0.0)
 Repository: CRAN
-Date/Publication: 2017-05-16 04:42:54 UTC
