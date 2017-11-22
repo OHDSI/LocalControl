@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // newLC
 List newLC(DataFrame& patients, std::vector<double> limits, unsigned int numThreads);
-RcppExport SEXP LocalControl_newLC(SEXP patientsSEXP, SEXP limitsSEXP, SEXP numThreadsSEXP) {
+RcppExport SEXP _LocalControl_newLC(SEXP patientsSEXP, SEXP limitsSEXP, SEXP numThreadsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -20,7 +20,7 @@ END_RCPP
 }
 // newCRLC
 List newCRLC(DataFrame& patients, std::vector<double> limits, std::vector<double> fTimes, int cenCode, unsigned int numThreads);
-RcppExport SEXP LocalControl_newCRLC(SEXP patientsSEXP, SEXP limitsSEXP, SEXP fTimesSEXP, SEXP cenCodeSEXP, SEXP numThreadsSEXP) {
+RcppExport SEXP _LocalControl_newCRLC(SEXP patientsSEXP, SEXP limitsSEXP, SEXP fTimesSEXP, SEXP cenCodeSEXP, SEXP numThreadsSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -35,7 +35,7 @@ END_RCPP
 }
 // getMaxDist
 double getMaxDist(DataFrame& df);
-RcppExport SEXP LocalControl_getMaxDist(SEXP dfSEXP) {
+RcppExport SEXP _LocalControl_getMaxDist(SEXP dfSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;

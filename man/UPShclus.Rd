@@ -19,7 +19,7 @@ UPShclus(envir, dframe, xvars, method, metric)
 }
 \value{
 An output list object of class UPShclus:
-\itemize{ 
+\itemize{
  \item{dframe}{Name of data.frame containing baseline X covariates.}
  \item{xvars}{List of names of X variable(s).}
  \item{method}{Hierarchical Clustering Method: "diana", "agnes" or "hclus".}

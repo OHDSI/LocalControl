@@ -2,14 +2,14 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 newLC <- function(patients, limits, numThreads) {
-    .Call('LocalControl_newLC', PACKAGE = 'LocalControl', patients, limits, numThreads)
+    .Call(`_LocalControl_newLC`, patients, limits, numThreads)
 }
 
 newCRLC <- function(patients, limits, fTimes, cenCode, numThreads) {
-    .Call('LocalControl_newCRLC', PACKAGE = 'LocalControl', patients, limits, fTimes, cenCode, numThreads)
+    .Call(`_LocalControl_newCRLC`, patients, limits, fTimes, cenCode, numThreads)
 }
 
 getMaxDist <- function(df) {
-    .Call('LocalControl_getMaxDist', PACKAGE = 'LocalControl', df)
+    .Call(`_LocalControl_getMaxDist`, df)
 }
 

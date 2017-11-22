@@ -3,8 +3,6 @@
  * The contents of the file can be broken into 3 or 4 sections which are marked below.
  * Eventually, each of the sections should be broken up and linked together with an appropriate header file.
  *
- * Kaizen.
- *
  * @author Nick Lauve, Christophe Lambert, Robert Obenchain, Stan Young
  */
 

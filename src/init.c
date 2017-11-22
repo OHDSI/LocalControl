@@ -3,19 +3,19 @@
 #include <stdlib.h> // for NULL
 #include <R_ext/Rdynload.h>
 
-/* FIXME: 
+/* FIXME:
    Check these declarations against the C/Fortran source code.
 */
 
 /* .Call calls */
-extern SEXP LocalControl_getMaxDist(SEXP);
-extern SEXP LocalControl_newCRLC(SEXP, SEXP, SEXP, SEXP, SEXP);
-extern SEXP LocalControl_newLC(SEXP, SEXP, SEXP);
+extern SEXP _LocalControl_getMaxDist(SEXP);
+extern SEXP _LocalControl_newCRLC(SEXP, SEXP, SEXP, SEXP, SEXP);
+extern SEXP _LocalControl_newLC(SEXP, SEXP, SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"LocalControl_getMaxDist", (DL_FUNC) &LocalControl_getMaxDist, 1},
-    {"LocalControl_newCRLC",    (DL_FUNC) &LocalControl_newCRLC,    5},
-    {"LocalControl_newLC",      (DL_FUNC) &LocalControl_newLC,      3},
+    {"_LocalControl_getMaxDist", (DL_FUNC) &_LocalControl_getMaxDist, 1},
+    {"_LocalControl_newCRLC",    (DL_FUNC) &_LocalControl_newCRLC,    5},
+    {"_LocalControl_newLC",      (DL_FUNC) &_LocalControl_newLC,      3},
     {NULL, NULL, 0}
 };
 

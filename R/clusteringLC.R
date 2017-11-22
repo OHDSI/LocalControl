@@ -1,4 +1,3 @@
-
 #' @importFrom cluster diana agnes
 #' @importFrom gss ssden dssden qssden
 #' @importFrom grDevices dev.interactive
@@ -8,16 +7,16 @@
 #' @importFrom stats cutree density dist fitted.values glm hclust kmeans smooth.spline
 #' @importFrom stats lm loess model.matrix na.omit pchisq prcomp predict sd var
 
-#' @name localControlClassic
+#' @name LocalControlClassic
 #' @title Local Control Classic
 #'
-#' @description localControlClassic was originally contained in the deprecated
-#' CRAN package USPS, localControl is a combination
+#' @description LocalControlClassic was originally contained in the deprecated
+#' CRAN package USPS, this function is a combination
 #' of three of the original USPS functions, UPShclus, UPSaccum, and UPSnnltd.
 #' This replicates the original implementation of the Local Control functionality in
 #' Robert Obenchain's USPS package. Some of the features have been
 #' removed due to deprecation of R packages distributed through CRAN.
-#' For a given number of patient clusters in baseline X-covariate space, localControl()
+#' For a given number of patient clusters in baseline X-covariate space, LocalControlClassic()
 #' characterizes the distribution of Nearest Neighbor "Local Treatement Differences" (LTDs) on
 #' a specified Y-outcome variable.
 #'
@@ -31,7 +30,7 @@
 #' @param scedas Scedasticity assumption: "homo" or "hete".
 #' @param clusterMethod Type of clustering method, defaults to "complete". Currently implemented methods:  "ward", "single", "complete" or "average".
 #' @param clusterDist Distance type to use, defaults to "euclidean". Currently implemented: "euclidiean", "manhattan", "maximum", or "minkowski".
-#' @param clusterCounts A vector containing different number of clusters in baseline X-covariate space which localControl will iterate over.
+#' @param clusterCounts A vector containing different number of clusters in baseline X-covariate space which Local Control will iterate over.
 #'
 #' @return Returns a list containing several elements.
 #'   \item{hiclus}{Name of clustering object created by UPShclus().}
@@ -84,19 +83,19 @@
 #'
 #' @examples
 #'  data(lindner)
-#'  
+#'
 #'  cvars <- c("stent","height","female","diabetic","acutemi",
 #'             "ejecfrac","ves1proc")
 #'  numClusters <- c(1, 2, 10, 15, 20, 25, 30, 35, 40, 45, 50)
-#'  results <- localControlClassic( data = lindner,
+#'  results <- LocalControlClassic( data = lindner,
 #'                                 clusterVars = cvars,
 #'                                 treatmentColName = "abcix",
 #'                                 outcomeColName = "cardbill",
 #'                                 clusterCounts = numClusters)
 #'  UPSLTDdist(results,ylim=c(-15000,15000))
-#'                                  
+#'
 #' @export
-localControlClassic <- function(data,
+LocalControlClassic <- function(data,
                                 clusterVars,
                                 treatmentColName,
                                 outcomeColName,
@@ -178,21 +177,21 @@ newLCCenv <-function(data, dfName = ""){
 #' @param xvars {List of names of X variable(s).}
 #' @param method {Hierarchical Clustering Method: "diana", "agnes" or "hclus".}
 #' @param envir name of the working local control classic environment.
-#' @param metric A valid distance metric for clustering. 
-#' 
+#' @param metric A valid distance metric for clustering.
+#'
 #' @details The first step in an Unsupervised Propensity Scoring alalysis is always
 #'  to hierarchically cluster patients in baseline X-covariate space.  UPShclus uses
 #'  a Mahalabobis metric and clustering methods from the R "cluster" library for this
 #'  key initial step.
 #'
 #' @return An output list object of class UPShclus:
-#' \itemize{ 
+#' \itemize{
 #'  \item{dframe}{Name of data.frame containing baseline X covariates.}
 #'  \item{xvars}{List of names of X variable(s).}
 #'  \item{method}{Hierarchical Clustering Method: "diana", "agnes" or "hclus".}
 #'  \item{upshcl}{Hierarchical clustering object created by choice between three possible methods.}
-#' } 
-#' 
+#' }
+#'
 #' @references {
 #'  Kaufman L, Rousseeuw PJ.  (1990) \bold{Finding Groups in Data.  An Introduction to
 #'   Cluster Analysis}.  New York: John Wiley and Sons.
@@ -205,11 +204,11 @@ newLCCenv <-function(data, dfName = ""){
 #'   \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 #'
 #'  Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
-#' 
+#'
 #'  Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
 #'  \emph{Biometrics} \bold{36}: 293-298.
 #' }
-#' 
+#'
 #' @seealso \code{\link{UPSaccum}}, \code{\link{UPSnnltd}} and \code{\link{UPSgraph}}.
 #' @keywords cluster design
 #' @author Bob Obenchain <wizbob@att.net>
@@ -258,7 +257,7 @@ newLCCenv <-function(data, dfName = ""){
 #' @description Specify key result accumulation parameters: Treatment t-Factor, Outcome
 #'  Y-variable, faclev setting, scedasticity assumption, and name of the UPSgraph() data
 #'  accumulation object.
-#' 
+#'
 #' @param envir name of the working local control classic environment.
 #' @param dframe {Name of data.frame containing the X, t & Y variables.}
 #' @param trtm {Name of treatment factor variable.}
@@ -271,9 +270,9 @@ newLCCenv <-function(data, dfName = ""){
 #' @details The second phase in an Unsupervised Propensity Scoring analysis is to prepare to
 #'  accumulate results over a wide range of values for "Number of Clusters."  As the number of
 #'  such clusters increases, individual clusters will tend to become smaller and smaller and,
-#'  thus, more and more compact in covariate X-space. 
-#' 
-#' @return   
+#'  thus, more and more compact in covariate X-space.
+#'
+#' @return
 #' \itemize{
 #'  \item{hiclus}{Name of a diana, agnes or hclust object created by UPShclus().}
 #'  \item{dframe}{Name of data.frame containing the X, t & Y variables.}
@@ -396,7 +395,7 @@ newLCCenv <-function(data, dfName = ""){
 #'  \item{cumchi}{Cumulative Chi-Square statistic for interaction in the three-way, nested table.}
 #'  \item{cumdf}{Degrees of-Freedom for the Cumulative Chi-Squared.}
 #' }
-#' 
+#'
 #' @references {
 #'   Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
 #'  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
@@ -653,7 +652,7 @@ newLCCenv <-function(data, dfName = ""){
 #' @details The third phase of Unsupervised Propensity Scoring is a graphical Sensitivity
 #'  Analysis that depicts how the Overall Means of the LTD and LOA distributions change with
 #'  the number of clusters.
-#'  
+#'
 #' @references   {
 #' Kaufman L, Rousseeuw PJ. (1990) \bold{Finding Groups in Data.  An Introduction to
 #'  Cluster Analysis}.  \emph{New York: John Wiley and Sons}.
@@ -666,11 +665,11 @@ newLCCenv <-function(data, dfName = ""){
 #'  Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
 #'  \emph{Biometrics} \bold{36}: 293-298.
 #' }
-#' 
+#'
 #' @seealso \code{\link{UPSnnltd}}, \code{\link{UPSivadj}} and \code{\link{UPSaccum}}.
-#'  
+#'
 #' @author Bob Obenchain <wizbob@att.net>
-#' 
+#'
 #' @keywords hplot
 #' @export
 "UPSgraph" <- function (envir, nncol = "red", nwcol = "green3", ivcol = "blue", ...)
@@ -951,13 +950,13 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  Percentages.
 #'
 #' @param envir name of the working local control classic environment.
-#' @param numclust {Number of clusters in baseline X-covariate space.} 
-#' 
+#' @param numclust {Number of clusters in baseline X-covariate space.}
+#'
 #' @details Multiple calls to UPSivadj(n) for varying numbers of clusters n are made after first
 #'  invoking UPShclus() to hierarchically cluster patients in X-space and then invoking UPSaccum()
 #'  to specify a Y outcome variable and a two-level treatment factor t.  UPSivadj(n) linearly
 #'  smoothes the LATE distribution when plotted versus within cluster propensity score percentages.
-#'  
+#'
 #' @return An output list object of class UPSivadj:
 #'  \itemize{
 #'   \item{hiclus}{Name of clustering object created by UPShclus().}
@@ -992,7 +991,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'   \item{ivt100p}{Predicted outcome at PS percentage 100.}
 #'   \item{ivt1pse}{Standard deviation of outcome prediction at PS percentage 100.}
 #' }
-#' @references { 
+#' @references {
 #'  Imbens GW, Angrist JD. (1994) Identification and Estimation  of
 #'   Local Average Treatment Effects (LATEs). \emph{Econometrica} \bold{62}: 467-475.
 #'
@@ -1008,7 +1007,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
 #'   in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}: 41-55.
 #' }
-#' 
+#'
 #' @seealso \code{\link{UPSnnltd}}, \code{\link{UPSaccum}} and \code{\link{UPSgraph}}.
 #' @keywords hplot nonparametric
 #' @author Bob Obenchain <wizbob@att.net>
@@ -1105,8 +1104,8 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @description For a given number of clusters, UPSaltdd() characterizes the potentially biased
 #'  distribution of "Local Treatment Differences" (LTDs) in a continuous outcome y-variable between
 #'  two treatment groups due to Random Clusterings.  When the NNobj argument is not NA and specifies
-#'  an existing UPSnnltd() object, UPSaltdd() also computes a smoothed CDF for the NN/LTD 
-#'  distribution for direct comparison with the Artificial LTD distribution. 
+#'  an existing UPSnnltd() object, UPSaltdd() also computes a smoothed CDF for the NN/LTD
+#'  distribution for direct comparison with the Artificial LTD distribution.
 #'
 #' @param dframe {Name of data.frame containing a treatment-factor and the outcome y-variable.}
 #' @param trtm {Name of treatment factor variable with two levels.}
@@ -1120,11 +1119,11 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @param reps {Number of overall Replications, each with the same number of requested clusters.}
 #' @param seed {Seed for Monte Carlo random number generator.}
 #' @param envir name of the working local control classic environment.
-#' 
+#'
 #' @details Multiple calls to UPSaltdd() for different UPSnnltd objects or different numbers of
 #'  clusters are typically made after first invoking UPSgraph().
-#'  
-#' @return 
+#'
+#' @return
 #' \itemize{
 #'   \item{dframe}{Name of data.frame containing X, t & Y variables.}
 #'   \item{trtm}{Name of treatment factor variable.}
@@ -1141,20 +1140,20 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'   \item{altdd}{Matrix of LTDs and relative weights from artificial clusters.}
 #'   \item{alxmin}{Minimum artificial LTD value.}
 #'   \item{alxmax}{Maximum artificial LTD value.}
-#'   \item{alymax}{Maximum weight among artificial LTDs.}  
+#'   \item{alymax}{Maximum weight among artificial LTDs.}
 #'   \item{altdcdf}{Vector of artificial LTD x-coordinates for smoothed CDF.}
 #'   \item{qq}{Vector of equally spaced CDF values from 0.0 to 1.0.}
 #'   \item{nnltdd}{Optional matrix of relevant NN/LTDs and relative weights.}
 #'   \item{nnlxmin}{Optional minimum NN/LTD value.}
 #'   \item{nnlxmax}{Optional maximum NN/LTD value.}
-#'   \item{nnlymax}{Optional maximum weight among NN/LTDs.}  
+#'   \item{nnlymax}{Optional maximum weight among NN/LTDs.}
 #'   \item{nnltdcdf}{Optional vector of NN/LTD x-coordinates for smoothed CDF.}
 #'   \item{nq}{Optional vector of equally spaced CDF values from 0.0 to 1.0.}
-#' 
+#'
 #' }
-#' 
+#'
 #' @seealso \code{\link{UPSnnltd}}, \code{\link{UPSaccum}} and \code{\link{UPSgraph}}.
-#' 
+#'
 #' @references {
 #'   Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
 #'  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
@@ -1167,9 +1166,9 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'
 #'  Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
 #'  \emph{Biometrics} \bold{36}: 293-298.
-#' 
+#'
 #' }
-#' 
+#'
 #' @author Bob Obenchain <wizbob@att.net>
 #' @export
 "UPSaltdd" <- function(envir, dframe, trtm, yvar, faclev=3, scedas="homo", NNobj=NA, clus=50, reps=10, seed=12345)
@@ -1892,7 +1891,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @param span optional; span (0 to 2) argument for the loess() function.
 #' @param fam optional; "gaussian" or "symmetric".
 #' @param envir Local control classic environment.
-#' 
+#'
 #' @details {Once one has fitted a somewhat smooth curve through scatters of observed outcomes, Y,
 #'  versus the fitted propensity scores, X, for the patients in each of the two treatment groups,
 #'  one can consider the question: "Over the range where both smooth curves are defined (i.e. their
@@ -1940,7 +1939,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'
 #'   Ripley BD, loess() based on the 'cloess' package of Cleveland, Grosse and Shyu.
 #' }
-#' 
+#'
 #' @author Bob Obenchain <wizbob@att.net>
 #' @export
 "SPSloess" <- function (envir, dframe, trtm, pscr, yvar, faclev = 3, deg = 2, span = 0.75,fam = "symmetric")
@@ -2032,7 +2031,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @title Propensity Score prediction of Treatment Selection from Patient Baseline X-covariates
 #' @description Use a logistic regression model to predict Treatment Selection from Patient
 #'  Baseline X-covariates in Supervised Propensity Scoring.
-#'  
+#'
 #' @param envir name of the working local control classic environment.
 #' @param dframe data.frame containing X, t and Y variables.
 #' @param form Valid formula for glm()with family = binomial(), with the two-level treatment
@@ -2043,8 +2042,8 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @param bins optional; number of adjacent PS bins desired; default to 5.
 #' @param appn optional; append the pfit, prank and qbin variables to the input dfname when
 #'   appn=="", else save augmented data.frame to name specified within a non-blank appn string.
-#' 
-#' 
+#'
+#'
 #' @details {The first phase of Supervised Propensity Scoring is to develop a logit (or probit) model
 #'  predicting treatment choice from patient baseline X characteristics.  SPSlogit uses a call to
 #'  glm()with family = binomial() to fit a logistic regression.}
@@ -2129,13 +2128,13 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @name SPSnbins
 #' @title Change the Number of Bins in Supervised Propensiy Scoring
 #' @description {Change the Number of Bins in Supervised Propensiy Scoring}
-#' 
+#'
 #' @param dframe {Name of data.frame of the form output by SPSlogit().}
 #' @param envir name of the working local control classic environment.
 #' @param prnk {Name of PS tied-rank variable from previous call to SPSlogit().}
 #' @param qbin {Name of variable to contain the re-assigned bin number for each patient.}
 #' @param bins {Number of PS bins desired.}
-#' 
+#'
 #' @details Part or all of the first phase of Supervised Propensity Scoring will need to be redone
 #'   if SPSbalan() detects dependence of within-bin X-covariate distributions upon treatment choice.
 #'   Use SPSnbins() to change (increase) the number of adjacent PS bins.  If this does not achieve
@@ -2149,9 +2148,9 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'   Cochran WG. (1968) The effectiveness of adjustment by subclassification
 #'   in removing bias in observational studies. \emph{Biometrics} \bold{24}:
 #'   205-213.
-#' 
+#'
 #'   Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
-#' 
+#'
 #'   Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
 #'   Using Subclassification on a Propensity Score. \emph{J Amer Stat Assoc}
 #'   \bold{79}: 516-524.
@@ -2190,7 +2189,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @title {Examine Treatment Differences on an Outcome Measure in Supervised Propensiy Scoring}
 #' @description {Examine Within-Bin Treatment Differences on an Outcome Measure and Average these
 #'  Differences across Bins.}
-#'  
+#'
 #' @param envir name of the working local control classic environment.
 #' @param dframe {Name of augmented data.frame written to the appn="" argument of SPSlogit().}
 #' @param trtm {Name of treatment factor variable.}
@@ -2199,7 +2198,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #' @param faclev {Maximum number of different numerical values an X-covariate can assume without
 #'   automatically being converted into a "factor" variable; faclev=1 causes a binary indicator to
 #'   be treated as a continuous variable determining an average or proportion.}
-#' 
+#'
 #' @details Once the second phase of Supervised Propensity Scoring confirms, using SPSbalan(), that
 #'  X-covariate Distributions have been Balanced Within-Bins, the third phase can start: Examining
 #'  Within-Bin Outcome Difference due to Treatment and Averaging these Differences across Bins.
@@ -2408,56 +2407,56 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 
 #' @name UPSLTDdist
 #' @title Plot the LTD distribution as a function of the number of clusters.
-#' @description This function creates a plot displaying the distribution of 
+#' @description This function creates a plot displaying the distribution of
 #'  Local Treatment Differences (LTDs) as a function of the number of clusters
-#'  created for all UPSnnltd objects in the provided environment. The hinges and 
+#'  created for all UPSnnltd objects in the provided environment. The hinges and
 #'  whiskers are generated using \code{\link[grDevices]{boxplot.stats}}.
-#' @param envir A localControlClassic environment containing UPSnnltd objects.
+#' @param envir A LocalControlClassic environment containing UPSnnltd objects.
 #' @param legloc Where to place the legend in the returned plot. Defaults to "bottomleft".
-#' @inheritDotParams graphics::plot -x -y 
-#' 
-#' @return Returns the LTD distribution plot. 
-#' @return Adds the "ltdds" object to envir. 
-#' 
-#' @examples 
-#' 
+#' @inheritDotParams graphics::plot -x -y
+#'
+#' @return Returns the LTD distribution plot.
+#' @return Adds the "ltdds" object to envir.
+#'
+#' @examples
+#'
 #'  data(lindner)
 #'  cvars <- c("stent","height","female","diabetic","acutemi",
 #'             "ejecfrac","ves1proc")
 #'  numClusters <- c(1, 2, 10, 15, 20, 25, 30, 35, 40, 45, 50)
-#'  results <- localControlClassic(data = lindner,
+#'  results <- LocalControlClassic(data = lindner,
 #'                                 clusterVars = cvars,
 #'                                 treatmentColName = "abcix",
 #'                                 outcomeColName = "cardbill",
 #'                                 clusterCounts = numClusters)
 #'  UPSLTDdist(results,ylim=c(-15000,15000))
-#' 
+#'
 #' @export
 "UPSLTDdist" <- function(envir, legloc = "bottomleft", ...){
 
   clusts = envir[["summary"]]$Requested_clusters
-  
+
   ltdds = list()
   for(cc in clusts){
       objName = paste0("UPSnnltd", cc)
       nnObj = envir[[objName]]
       ltdds[[objName]] = nnObj$pbindif[nnObj$nnhbindf[,1]]
   }
-  
+
   envir[["ltdds"]] = ltdds
-  
+
   infPatFrac = envir[["summary"]]$Informative_fraction
 
   actClusterCounts = envir[["summary"]]$Clusters_created
   ltdm = sapply(ltdds, function(x) mean(x,na.rm=T))
   boxes = lapply(ltdds, FUN = function(x) boxplot(x, plot=FALSE))
   bStats = sapply(boxes, FUN = function(x) x$stats)
-  
+
   #add the boxplot stats for each of calls to upsnnltd
   envir[["boxstats"]] = bStats
-  
+
   yname = envir[["UPSaccum.pars"]][,"yvar"]
-  
+
   globMean = ltdm[1] ## Appropriately Weighted by Cluster Size = Number of Patients
 
   ## New LTD Distribution Graphic...
@@ -2474,13 +2473,13 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
   lines(actClusterCounts, bStats[3,], col = "red", lty = 3, lwd = 2)  #median
   lines(actClusterCounts, bStats[4,], col = "black", lty = 3, lwd = 2)#upper hinge
   lines(actClusterCounts, bStats[5,], col = "blue", lty = 3, lwd = 2) #upper whisker
-  
+
   par(new = T)
   plot( x = actClusterCounts, y = infPatFrac,
       	type = "l", lwd = 3, lty = 3,
       	axes=F, xlab=NA, ylab=NA,
       	cex=1.2, col = "green", ylim = c(0,1))
-  
+
   axis(side = 4)
   mtext(side = 4, line = 3, 'Fraction of Patients Informative')
   legend( legloc,
@@ -2494,38 +2493,38 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 }
 
 #' @name UPSboxplot
-#' 
-#' @title Returns a series of boxplots comparing LTD distributions given different numbers of clusters.   
-#' @description Given the output of \code{\link{localControlClassic}}, this function uses all or some of the 
-#' UPSnnltd objects contained to create a series of boxplots of the local treatment difference at each of the 
-#' different numbers of requested clusters. 
-#' @param envir A localControlClassic environment containing UPSnnltd objects.
+#'
+#' @title Returns a series of boxplots comparing LTD distributions given different numbers of clusters.
+#' @description Given the output of \code{\link{LocalControlClassic}}, this function uses all or some of the
+#' UPSnnltd objects contained to create a series of boxplots of the local treatment difference at each of the
+#' different numbers of requested clusters.
+#' @param envir A LocalControlClassic environment containing UPSnnltd objects.
 #' @param clusterSubset (optional) A vector containing requested cluster counts.
 #'  If provided, the boxplot is created using only the UPSnnltd objects corresponding to the requested cluster counts.
-#' 
+#'
 #' @return Returns the call to boxplot with the formula: "ltd ~ numclst".
-#' @return Adds the "ltdds" object to the Local Control environment. 
-#' 
+#' @return Adds the "ltdds" object to the Local Control environment.
+#'
 #' @examples
-#' 
+#'
 #' data(lindner)
 #' cvars <- c("stent","height","female","diabetic","acutemi",
 #'            "ejecfrac","ves1proc")
 #' numClusters <- c(1, 5, 10, 20, 40, 50)
 #'
-#' results <- localControlClassic(data = lindner,
+#' results <- LocalControlClassic(data = lindner,
 #'                                clusterVars = cvars,
 #'                                treatmentColName = "abcix",
 #'                                outcomeColName = "cardbill",
 #'                                clusterCounts = numClusters)
-#'                          
-#' bxp <- UPSboxplot(results)     
-#'  
+#'
+#' bxp <- UPSboxplot(results)
+#'
 #' @export
 "UPSboxplot" <- function(envir, clusterSubset = c()){
 
   if(length(clusterSubset > 0)) {
-    clusts = clusterSubset 
+    clusts = clusterSubset
   }
   else {
     clusts = envir[["summary"]]$Requested_clusters
@@ -2539,7 +2538,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
   }
 
   envir[["ltdds"]] = ltdds
-  
+
   bxps = do.call("rbind",
                  mapply(function(X,Y) {data.frame(ltd = X, numclst = Y)},
                         X=ltdds, Y=clusts, SIMPLIFY = F, USE.NAMES = F))
@@ -2552,6 +2551,6 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
                       xlab="Number of Clusters")
 
   axis(side = 1, labels = clusts, at = 1:length(clusts))
-  
+
   bxpstats
 }

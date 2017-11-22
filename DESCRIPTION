@@ -1,10 +1,16 @@
 Package: LocalControl
 Type: Package
 Title: Nonparametric Methods for Generating High Quality Comparative Effectiveness Evidence
-Version: 1.0.1
-Date: 2017-06-02
-Author: Nicolas R. Lauve, Stuart J. Nelson, S. Stanley Young, Robert L. Obenchain, Christophe G. Lambert
-Maintainer: Christophe G. Lambert <cglambert@unm.edu>
+Version: 1.1.0
+Date: 2017-11-22
+Authors@R: c(
+  person(given = "Nicolas R.", family = "Lauve", role = "aut"),
+  person(given = "Stuart J.", family = "Nelson", role = "aut"),
+  person(given = "S. Stanley", family = "Young", role = "aut"),
+  person(given = "Robert L.", family = "Obenchain", role = "aut"),
+  person(given = "Melania", family = "Pintilie", role = "ctb"),
+  person(given = "Martin", family = "Kutz", role = "ctb"),
+  person(given = "Christophe G.", family = "Lambert", role = c("aut","cre"), email = "cglambert@unm.edu"))
 Description: Implements novel nonparametric approaches to address
     biases and confounding when comparing treatments or exposures in
     observational studies of outcomes. While designed and appropriate for use

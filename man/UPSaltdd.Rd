@@ -47,13 +47,13 @@ indicator to be treated as a continuous variable determining an average or propo
   \item{altdd}{Matrix of LTDs and relative weights from artificial clusters.}
   \item{alxmin}{Minimum artificial LTD value.}
   \item{alxmax}{Maximum artificial LTD value.}
-  \item{alymax}{Maximum weight among artificial LTDs.}  
+  \item{alymax}{Maximum weight among artificial LTDs.}
   \item{altdcdf}{Vector of artificial LTD x-coordinates for smoothed CDF.}
   \item{qq}{Vector of equally spaced CDF values from 0.0 to 1.0.}
   \item{nnltdd}{Optional matrix of relevant NN/LTDs and relative weights.}
   \item{nnlxmin}{Optional minimum NN/LTD value.}
   \item{nnlxmax}{Optional maximum NN/LTD value.}
-  \item{nnlymax}{Optional maximum weight among NN/LTDs.}  
+  \item{nnlymax}{Optional maximum weight among NN/LTDs.}
   \item{nnltdcdf}{Optional vector of NN/LTD x-coordinates for smoothed CDF.}
   \item{nq}{Optional vector of equally spaced CDF values from 0.0 to 1.0.}
 
@@ -63,7 +63,7 @@ indicator to be treated as a continuous variable determining an average or propo
 For a given number of clusters, UPSaltdd() characterizes the potentially biased
  distribution of "Local Treatment Differences" (LTDs) in a continuous outcome y-variable between
  two treatment groups due to Random Clusterings.  When the NNobj argument is not NA and specifies
- an existing UPSnnltd() object, UPSaltdd() also computes a smoothed CDF for the NN/LTD 
+ an existing UPSnnltd() object, UPSaltdd() also computes a smoothed CDF for the NN/LTD
  distribution for direct comparison with the Artificial LTD distribution.
 }
 \details{

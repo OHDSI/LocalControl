@@ -7,7 +7,7 @@
 UPSLTDdist(envir, legloc = "bottomleft", ...)
 }
 \arguments{
-\item{envir}{A localControlClassic environment containing UPSnnltd objects.}
+\item{envir}{A LocalControlClassic environment containing UPSnnltd objects.}
 
 \item{legloc}{Where to place the legend in the returned plot. Defaults to "bottomleft".}
 
@@ -22,9 +22,9 @@ Returns the LTD distribution plot.
 Adds the "ltdds" object to envir.
 }
 \description{
-This function creates a plot displaying the distribution of 
+This function creates a plot displaying the distribution of
  Local Treatment Differences (LTDs) as a function of the number of clusters
- created for all UPSnnltd objects in the provided environment. The hinges and 
+ created for all UPSnnltd objects in the provided environment. The hinges and
  whiskers are generated using \code{\link[grDevices]{boxplot.stats}}.
 }
 \examples{
@@ -33,7 +33,7 @@ This function creates a plot displaying the distribution of
  cvars <- c("stent","height","female","diabetic","acutemi",
             "ejecfrac","ves1proc")
  numClusters <- c(1, 2, 10, 15, 20, 25, 30, 35, 40, 45, 50)
- results <- localControlClassic(data = lindner,
+ results <- LocalControlClassic(data = lindner,
                                 clusterVars = cvars,
                                 treatmentColName = "abcix",
                                 outcomeColName = "cardbill",

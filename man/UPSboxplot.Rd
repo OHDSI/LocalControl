@@ -7,7 +7,7 @@
 UPSboxplot(envir, clusterSubset = c())
 }
 \arguments{
-\item{envir}{A localControlClassic environment containing UPSnnltd objects.}
+\item{envir}{A LocalControlClassic environment containing UPSnnltd objects.}
 
 \item{clusterSubset}{(optional) A vector containing requested cluster counts.
 If provided, the boxplot is created using only the UPSnnltd objects corresponding to the requested cluster counts.}
@@ -18,8 +18,8 @@ Returns the call to boxplot with the formula: "ltd ~ numclst".
 Adds the "ltdds" object to the Local Control environment.
 }
 \description{
-Given the output of \code{\link{localControlClassic}}, this function uses all or some of the 
-UPSnnltd objects contained to create a series of boxplots of the local treatment difference at each of the 
+Given the output of \code{\link{LocalControlClassic}}, this function uses all or some of the
+UPSnnltd objects contained to create a series of boxplots of the local treatment difference at each of the
 different numbers of requested clusters.
 }
 \examples{
@@ -29,12 +29,12 @@ cvars <- c("stent","height","female","diabetic","acutemi",
            "ejecfrac","ves1proc")
 numClusters <- c(1, 5, 10, 20, 40, 50)
 
-results <- localControlClassic(data = lindner,
+results <- LocalControlClassic(data = lindner,
                                clusterVars = cvars,
                                treatmentColName = "abcix",
                                outcomeColName = "cardbill",
                                clusterCounts = numClusters)
-                         
-bxp <- UPSboxplot(results)     
- 
+
+bxp <- UPSboxplot(results)
+
 }

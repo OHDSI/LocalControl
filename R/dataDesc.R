@@ -24,8 +24,8 @@ NULL
 
 
 #' Framingham heart study data extract on smoking and hypertension.
-#' @description Data collected over a 24 year study suitable for competing 
-#'   risks survival analysis of hypertension and death as a function of smoking. 
+#' @description Data collected over a 24 year study suitable for competing
+#'   risks survival analysis of hypertension and death as a function of smoking.
 #' @format A data frame with 2316 rows and 11 columns:
 #' \describe{
 #'  \item{female}{Sex of the patient. 1=female, 0=male.}
@@ -42,7 +42,7 @@ NULL
 #' }
 #' @name framingham
 #' @docType data
-#' @references 
+#' @references
 #' \itemize{
 #'     \item Dawber TR, Meadors GF, Moore FE Jr. Epidemiological approaches to heart disease: the Framingham Study. Am J Public Health Nations Health. 1951;41(3):279-281.
 #'     \item Teaching Datasets - Public Use Datasets. \url{https://biolincc.nhlbi.nih.gov/teaching/}.

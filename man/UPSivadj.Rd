@@ -60,7 +60,7 @@ Multiple calls to UPSivadj(n) for varying numbers of clusters n are made after f
  smoothes the LATE distribution when plotted versus within cluster propensity score percentages.
 }
 \references{
-{ 
+{
  Imbens GW, Angrist JD. (1994) Identification and Estimation  of
   Local Average Treatment Effects (LATEs). \emph{Econometrica} \bold{62}: 467-475.
 
