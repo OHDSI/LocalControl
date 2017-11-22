@@ -12,6 +12,7 @@ LocalControl 1.1.0
 * Removed the summary object. 
 *   The summary is now created upon request using the summary() s3 function with the LocalControl classes. 
 * Added a formula interface for LocalControl (beta).
+
      LocalControl(data = lindner, 
                   modelForm = formula('cardbill ~ abcix | stent + female + acutemi'))
      
