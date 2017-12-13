@@ -2,6 +2,7 @@ LocalControl
 ============
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/LocalControl)](https://cran.r-project.org/package=LocalControl)
+[![CRAN_Status_Badge](http://cranlogs.r-pkg.org/badges/LocalControl)](https://cran.r-project.org/package=LocalControl)
 
 Introduction
 ============
