@@ -1,5 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-extras
-.travis.yml
-deploy.sh
+^\.o$
+^\.so$
+^\.dll$
