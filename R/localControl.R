@@ -654,6 +654,7 @@ LocalControlCompetingRisksConfidence <- function(LCCompRisk, confLevel = "95%", 
 #' @param nBootstrap The number of times to resample and run LocalControl for the confidence intervals.
 #' @param randSeed The seed used to set random number generator state prior to resampling. No default value, provide one for reproducible results.
 #' @examples
+#' \dontrun{
 #' #input the abciximab study data of Kereiakes et al. (2000).
 #' data(lindner)
 #'
@@ -675,6 +676,7 @@ LocalControlCompetingRisksConfidence <- function(LCCompRisk, confLevel = "95%", 
 #'
 #' # Plot the local treatment difference with confidence intervals.
 #' plot(results, confResults)
+#' }
 #'
 #' @export
 LocalControlNearestNeighborsConfidence = function(data, nBootstrap, randSeed,
