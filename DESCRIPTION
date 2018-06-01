@@ -28,19 +28,8 @@ SystemRequirements: C++11
 LazyData: TRUE
 LinkingTo: Rcpp
 Imports: Rcpp, gss, cluster, lattice, stats, graphics
-Suggests: colorspace, RColorBrewer, TeachingDemos, data.table,
-        dendextend, ggplot2, gplots, gridExtra, rpart, rpart.plot,
-        xtable
+Suggests: colorspace, RColorBrewer, TeachingDemos, data.table, dendextend, ggplot2, gplots, gridExtra, rpart, rpart.plot, xtable
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
 Depends: R (>= 3.0.0)
 Repository: CRAN
-Packaged: 2018-06-01 16:41:56 UTC; lambert
-Author: Nicolas R. Lauve [aut],
-  Stuart J. Nelson [aut],
-  S. Stanley Young [aut],
-  Robert L. Obenchain [aut],
-  Melania Pintilie [ctb],
-  Martin Kutz [ctb],
-  Christophe G. Lambert [aut, cre]
-Maintainer: Christophe G. Lambert <cglambert@unm.edu>
