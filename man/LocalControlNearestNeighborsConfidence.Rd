@@ -64,6 +64,7 @@ Given a number of bootstrap iterations and the params used to call
   The 50\% and 95\% quantiles are drawn from the distribution of results to produce the LTD confidence intervals.
 }
 \examples{
+\dontrun{
 #input the abciximab study data of Kereiakes et al. (2000).
 data(lindner)
 
@@ -85,5 +86,6 @@ confResults = LocalControlNearestNeighborsConfidence(
 
 # Plot the local treatment difference with confidence intervals.
 plot(results, confResults)
+}
 
 }

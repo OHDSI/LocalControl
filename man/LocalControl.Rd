@@ -4,7 +4,7 @@
 \alias{LocalControl}
 \title{Local Control}
 \usage{
-LocalControl(data, modelForm, outcomeType = "cross-sectional",
+LocalControl(data, modelForm = NULL, outcomeType = "cross-sectional",
   treatmentColName, outcomeColName, cenCode = 0, clusterVars,
   timeColName = "", treatmentCode, labelColName = "", radStepType = "exp",
   radDecayRate = 0.8, radMinFract = 0.01, radiusLevels = numeric(),
