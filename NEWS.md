@@ -1,3 +1,12 @@
+LocalControl 1.1.1
+================
+
+### Major changes
+* Added vignette
+
+### Minor changes
+* Added default value (NULL) to modelForm argument (LocalControl())
+
 LocalControl 1.1.0
 ================
 

@@ -123,7 +123,7 @@
 #'  plot(crresults)
 #' @export
 LocalControl<- function(data,
-                        modelForm,
+                        modelForm = NULL,
                         outcomeType = "cross-sectional",
                         treatmentColName,
                         outcomeColName,
@@ -175,7 +175,7 @@ LocalControl<- function(data,
   plist$treatmentColName = treatmentColName
 
   if(missing(treatmentCode)){
-    treatmentCode = levels(data[,treatmentColName])[1]
+    treatmentCode = data[1, treatmentColName]
   }else if(!is.element(as.character(treatmentCode), levels(as.factor(data[,treatmentColName])))){
     stop("treatmentCode must be a level of treatmentCol")
   }

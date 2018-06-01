@@ -19,7 +19,7 @@
  \item{cigpday}{Number of cigarettes smoked per day at time of study entry.}
 }}
 \description{
-Data collected over a 24 year study suitable for competing 
+Data collected over a 24 year study suitable for competing
   risks survival analysis of hypertension and death as a function of smoking.
 }
 \references{
