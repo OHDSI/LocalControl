@@ -795,17 +795,18 @@ int runLocalControl(LocalController &lci){
 
   int nt = lci.getThreadCount();
 
-  std::vector<pthread_t> threads = std::vector<pthread_t>(nt);
-
+  // std::vector<pthread_t> threads = std::vector<pthread_t>(nt);
+  // std::vector<ThreadParam> tp = std::vector<ThreadParam>(nt);
+  pthread_t *threads = new pthread_t[nt];
+  ThreadParam *tp = new ThreadParam[nt];
   lci.initLC();
 
   for(int i=0; i < nt; i++){
 
-    ThreadParam tp;
-    tp.lc = &lci;
-    tp.threadNum = i;
+    tp[i].lc = &lci;
+    tp[i].threadNum = i;
 
-    int rc = pthread_create(&threads[i], NULL, lcThreadOp, (void *) &tp);
+    int rc = pthread_create(&threads[i], NULL, lcThreadOp, (void *) &tp[i]);
 
     if(rc){
       Rcerr << "Error: unable to create thread, " << rc << "\n";
@@ -822,6 +823,8 @@ int runLocalControl(LocalController &lci){
     pthread_join(threads[i], NULL);
   }
 
+  delete [] tp;
+  delete [] threads;
   return 0;
 
 }
