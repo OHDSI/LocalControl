@@ -37,7 +37,7 @@
 #'                  to the primary interface for cross-sectional studies. The formula should be in the following format:
 #'                  "outcome ~ treatment | clusterVar1 ... clusterVarN".
 #'
-#' @param outcomeType Specifys the outcome type for the analysis. Defaults to cross-sectional.
+#' @param outcomeType Specifys the outcome type for the analysis. 
 #'
 #' @param treatmentColName A string containing the name of a column in data.
 #'                         The column contains the treatment variable specifying the treatment groups.
@@ -124,7 +124,7 @@
 #' @export
 LocalControl<- function(data,
                         modelForm = NULL,
-                        outcomeType = "cross-sectional",
+                        outcomeType = "default",
                         treatmentColName,
                         outcomeColName,
                         cenCode = 0,
@@ -285,7 +285,7 @@ print.LocalControlCR = function(x, ...){
 print.LocalControlCS = function(x, ...){
   lccs = x
   if(!inherits(lccs, "LocalControlCS")){
-    stop('Please provide output from a call to LocalControl where outcomeType = "cross-sectional"')
+    stop('Please provide output from a call to LocalControl where outcomeType = "default"')
   }
   message("LocalControl cross-sectional analysis results.\n")
   message(paste0("Data: ", lccs$params$data))
@@ -400,7 +400,7 @@ plot.LocalControlCR = function(x, ..., rad2plot, xlim, ylim = c(0,1),
 #' @description Creates a plot where the y axis represents the local treatment difference,
 #' while the x axis represents the percentage of the maximum radius. If the confidence summary (nnConfidence)
 #' is provided, the 50\% and 95\% confidence estimates are also plotted.
-#' @param x Return object from LocalControl with "cross-sectional" or no specified outcome type.
+#' @param x Return object from LocalControl with "default" outcomeType.
 #' @inheritDotParams graphics::plot -x -y
 #' @param nnConfidence Return object from LocalControlNearestNeighborsConfidence
 #' @param ylim The y axis bounds. Defaults to c(0,1).
@@ -474,16 +474,13 @@ plot.LocalControlCS = function(x, ..., nnConfidence, ylim,
     lines(xaxi, nnConfidence$rs_median, lwd = 2, pch = 16, type = 'o')
     lines(xaxi, nnConfidence$rs_95L, lty = 1, lwd = 2, col = "green", pch = 16, type = 'o')
     lines(xaxi, nnConfidence$rs_95U, lty = 1, lwd = 2, col = "green", pch = 16, type = 'o')
-    lines(xaxi, nnConfidence$rs_50L, lty = 1, lwd = 2, col = "purple", pch = 16, type = 'o')
-    lines(xaxi, nnConfidence$rs_50U, lty = 1, lwd = 2, col = "purple", pch = 16, type = 'o')
     legend(legendLocation,
-           lty = rep(1,3),
-           lwd = rep(2,3),
-           pch = rep(16,3),
-           col = c("black", "green","purple"),
+           lty = rep(1,2),
+           lwd = rep(2,2),
+           pch = rep(16,2),
+           col = c("black", "green"),
            legend = c("Resampling median LTD",
-                      "Resampling 95% confidence",
-                      "Resampling 50% confidence"))
+                      "Resampling 95% confidence"))
   }
   else{
     lines(xaxi, lcnnResults$summary$ltd, lwd = 2, pch = 16, type = 'o')
@@ -605,7 +602,7 @@ LocalControlCompetingRisksConfidence <- function(LCCompRisk, confLevel = "95%", 
 #' @name LocalControlNearestNeighborsConfidence
 #' @title Provides a bootstrapped confidence interval estimate for LocalControl LTDs.
 #' @description Given a number of bootstrap iterations and the params used to call
-#'   \code{\link{LocalControl}} with outcomeType = "cross-sectional", this function calls LocalControl nBootstrap times.
+#'   \code{\link{LocalControl}} with outcomeType = "default", this function calls LocalControl nBootstrap times.
 #'   The 50\% and 95\% quantiles are drawn from the distribution of results to produce the LTD confidence intervals.
 #'
 #' @param data DataFrame containing all variables which will be used for the analysis.
@@ -728,10 +725,10 @@ varSumm = function(vdf){
   dfRows = nrow(vdf)
   dfCols = 5
   sdf = data.frame(matrix(nrow = dfRows, ncol = dfCols))
-  names(sdf) = c("rs_median", "rs_95U", "rs_95L", "rs_50U", "rs_50L")
+  names(sdf) = c("rs_median", "rs_95U", "rs_95L")
   for(i in 1:dfRows){
     sdf[i, "rs_median"] = median(as.numeric(vdf[i,]), na.rm = T)
-    sdf[i, 2:dfCols] = quantile(as.numeric(vdf[i,]), probs = c(0.025, 0.975, 0.25, 0.75), na.rm = T)
+    sdf[i, 2:dfCols] = quantile(as.numeric(vdf[i,]), probs = c(0.025, 0.975), na.rm = T)
   }
   sdf
 }

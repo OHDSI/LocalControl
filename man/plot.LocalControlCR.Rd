@@ -6,8 +6,8 @@
 \usage{
 \method{plot}{LocalControlCR}(x, ..., rad2plot, xlim, ylim = c(0, 1),
   col1 = "blue", col0 = "red", xlab = "Time",
-  ylab = "Cumulative incidence", legendLocation = "topleft", main = "",
-  group1 = "Treatment 1", group0 = "Treatment 0")
+  ylab = "Cumulative incidence", legendLocation = "topleft",
+  main = "", group1 = "Treatment 1", group0 = "Treatment 0")
 }
 \arguments{
 \item{x}{Return object from LocalControl with outcomeType = "survival".}

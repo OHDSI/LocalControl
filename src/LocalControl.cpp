@@ -115,6 +115,8 @@ struct SurvivalResult{
   std::vector< std::vector<double> > t0CensorVects;
   std::vector< std::vector<double> > t1CensorVects;
   std::vector<int> informative;
+  std::vector<int> t0Informative;
+  std::vector<int> t1Informative;
 };
 // END: Param & result objects
 
@@ -422,6 +424,8 @@ public:
       results[iThread].t1CensorVects.resize(numLimits, std::vector<double> (numTimes));
       results[iThread].t0CensorVects.resize(numLimits, std::vector<double> (numTimes));
       results[iThread].informative.resize(numLimits,0);
+      results[iThread].t0Informative.resize(numLimits,0);
+      results[iThread].t1Informative.resize(numLimits,0);
     }
   }
 
@@ -452,7 +456,7 @@ public:
           } else {
             t1Happens[patientVect[distances[nnIdx].idx].riskIndex][uniqueIdx]++;
           }
-        }else {
+        } else {
           n0++;
           if(patientVect[distances[nnIdx].idx].censored) {
             t0Censors[uniqueIdx]++;
@@ -465,6 +469,11 @@ public:
 
       if(n1 > 0 && n0 > 0){
         results[threadIdx].informative[radIdx]++;
+        if(patientVect[patIdx].treatment){
+          results[threadIdx].t1Informative[radIdx]++;
+        } else {
+          results[threadIdx].t0Informative[radIdx]++;
+        }
         for(size_t j = 0;j < numTimes; j++){
           results[threadIdx].t1CensorVects[radIdx][j] += t1Censors[j]/(double) n1;
           results[threadIdx].t0CensorVects[radIdx][j] += t0Censors[j]/(double) n0;
@@ -485,6 +494,8 @@ public:
     for(i = 1; i < numThreads; i++){
       for(j = 0; j < numLimits; j++){
         results[0].informative[j] += results[i].informative[j];
+        results[0].t0Informative[j] += results[i].t0Informative[j];
+        results[0].t1Informative[j] += results[i].t1Informative[j];
         for(k = 0; k < numTimes; k++){
           for(l = 0; l < numRisks; l++){
             results[0].t0HappenVects[j][l][k] += results[i].t0HappenVects[j][l][k];
@@ -572,11 +583,26 @@ public:
     std::vector<std::vector<double> > t0KMs(numLimits, std::vector<double>(numTimes));
     std::vector<std::vector<double> > t1KMs(numLimits, std::vector<double>(numTimes));
 
-    for(i = 0; i < numLimits; i++){
 
+    for(i = 0; i < numLimits; i++){
+      
+      SurvivalResult sResult = oneResult;
+
+      for(k = 0; k < numTimes; k++){
+        for(l = 0; l < numRisks; l++){
+          sResult.t0HappenVects[i][l][k] *= (double) sResult.t0Informative[i] / (double) sResult.informative[i];
+          sResult.t1HappenVects[i][l][k] *= (double) sResult.t1Informative[i] / (double) sResult.informative[i];
+        }
+        sResult.t0CensorVects[i][k] *= (double) sResult.t0Informative[i] / (double) sResult.informative[i];
+        sResult.t1CensorVects[i][k] *= (double) sResult.t1Informative[i] / (double) sResult.informative[i];
+      }
+      
       std::vector<std::vector<double> > sp0s(numRisks, std::vector<double>(numTimes));
       std::vector<std::vector<double> > sp1s(numRisks, std::vector<double>(numTimes));
-
+      
+      std::vector<std::vector<double> > ws1s(numRisks, std::vector<double>(numTimes));
+      std::vector<std::vector<double> > ws0s(numRisks, std::vector<double>(numTimes));
+      
       std::vector<double> survSum1(numTimes);
       std::vector<double> survSum0(numTimes);
 
@@ -590,91 +616,92 @@ public:
       t0KMs[i][0] = 1.0;
       t1KMs[i][0] = 1.0;
 
-      double atrisk1 = oneResult.informative[i];
-      double atrisk0 = oneResult.informative[i];
-
+      double atrisk1 = sResult.t1Informative[i];
+      double atrisk0 = sResult.t0Informative[i];
 
       int max0 = 1, max1 = 1;
 
       for(j=1; j < numTimes; j++){
 
-        double events1 = 0.0;
-        double events0 = 0.0;
+        double events1 = 0.0, events0 = 0.0;
 
         for(l = 0; l < numRisks; l++){
-          events1 += oneResult.t1HappenVects[i][l][j];
-          events0 += oneResult.t0HappenVects[i][l][j];
+          events1 += sResult.t1HappenVects[i][l][j];
+          events0 += sResult.t0HappenVects[i][l][j];
         }
 
-        if(events0 > 0 || oneResult.t0CensorVects[i][j] > 0){
+        if(events0 > 0 || sResult.t0CensorVects[i][j] > 0){
           max0 = j;
         }
-        if(events1 > 0 || oneResult.t1CensorVects[i][j] > 0){
+        if(events1 > 0 || sResult.t1CensorVects[i][j] > 0){
           max1 = j;
         }
-
-        t0KMs[i][j] = t0KMs[i][j-1] * (atrisk0-events0)/atrisk0;
-        t1KMs[i][j] = t1KMs[i][j-1] * (atrisk1-events1)/atrisk1;
-        survSum1[j] = survSum1[j-1] + (events1 / (atrisk1*(atrisk1-events1)));
-        survSum0[j] = survSum0[j-1] + (events0 / (atrisk0*(atrisk0-events0)));
+        
+        t0KMs[i][j] = t0KMs[i][j-1] * ((atrisk0)-events0)/(atrisk0);
+        t1KMs[i][j] = t1KMs[i][j-1] * ((atrisk1)-events1)/(atrisk1);
+        
+        survSum0[j] = survSum0[j-1] + (events0 / ((atrisk0)*((atrisk0)-events0)));
+        survSum1[j] = survSum1[j-1] + (events1 / ((atrisk1)*((atrisk1)-events1)));
 
         for(l = 0; l < numRisks; l++){
 
-          sp0s[l][j] = (oneResult.t0HappenVects[i][l][j] / atrisk0) * t0KMs[i][j-1];
-          sp1s[l][j] = (oneResult.t1HappenVects[i][l][j] / atrisk1) * t1KMs[i][j-1];
-
+          sp0s[l][j] = (sResult.t0HappenVects[i][l][j] / atrisk0) * t0KMs[i][j-1];
+          sp1s[l][j] = (sResult.t1HappenVects[i][l][j] / atrisk1) * t1KMs[i][j-1];
+         
           cIF0s[l][i][j] = cIF0s[l][i][j-1] + sp0s[l][j];
           cIF1s[l][i][j] = cIF1s[l][i][j-1] + sp1s[l][j];
-
-          double wp0 = ((atrisk0 - oneResult.t0HappenVects[i][l][j]) / (oneResult.t0HappenVects[i][l][j]*atrisk0)) + survSum0[j-1];
+   
+          double wp0 = ((atrisk0 - sResult.t0HappenVects[i][l][j]) / (sResult.t0HappenVects[i][l][j]*atrisk0)) + survSum0[j-1];
+          double wp1 = ((atrisk1 - sResult.t1HappenVects[i][l][j]) / (sResult.t1HappenVects[i][l][j]*atrisk1)) + survSum1[j-1];
+          
           if(std::isinf(wp0)) wp0 = 0;
-          double wp1 = ((atrisk1 - oneResult.t1HappenVects[i][l][j]) / (oneResult.t1HappenVects[i][l][j]*atrisk1)) + survSum1[j-1];
           if(std::isinf(wp1)) wp1 = 0;
-
-          double ws0 = ((-1/atrisk0)) + survSum0[j-1];
-          if(std::isinf(ws0)) ws0 = 0;
-
-          double ws1 = ((-1/atrisk1)) + survSum1[j-1];
-          if(std::isinf(ws1)) ws1 = 0;
+          
+          ws0s[l][j] = (-1/atrisk0) + survSum0[j-1];
+          ws1s[l][j] = (-1/atrisk1) + survSum1[j-1];
+                              
+          if(std::isinf(ws0s[l][j])) ws0s[l][j] = 0;
+          if(std::isinf(ws1s[l][j])) ws1s[l][j] = 0;
 
           double nc1 = 0, nc0 = 0;
-
-          for(size_t n = 0; n < j; n++){
-            nc0 += sp0s[l][n] * sp0s[l][j] * ws0;
-            nc1 += sp1s[l][n] * sp1s[l][j] * ws1;
+          
+          for(size_t n = 0; n < j; n++){ 
+            nc1 += sp1s[l][n] * sp1s[l][j] * ws1s[l][n]; 
+            nc0 += sp0s[l][n] * sp0s[l][j] * ws0s[l][n]; 
           }
 
-          sq0s[l] += 2 * nc0;
-          sv0s[l] += sp0s[l][j] * sp0s[l][j] * wp0;
-
-          sq1s[l] += 2 * nc1;
+          sq1s[l] += nc1 * 2; 
+          sq0s[l] += nc0 * 2;
+          
           sv1s[l] += sp1s[l][j] * sp1s[l][j] * wp1;
-
-          //using the original fraction of T1/T0 here, not sure if this is correct
-          sdr0s[l][i][j] = sqrt((sq0s[l] + sv0s[l]) / ((double)t0_count/(double)numPatients));
-          sdr1s[l][i][j] = sqrt((sq1s[l] + sv1s[l]) / ((double)t1_count/(double)numPatients));
+          sv0s[l] += sp0s[l][j] * sp0s[l][j] * wp0;
+          
+          sdr1s[l][i][j] = sqrt(sq1s[l] + sv1s[l]);
+          sdr0s[l][i][j] = sqrt(sq0s[l] + sv0s[l]);
+        
         }
-
-        atrisk0 -= (events0 + oneResult.t0CensorVects[i][j]);
-        atrisk1 -= (events1 + oneResult.t1CensorVects[i][j]);
-
+        atrisk0 -= (events0 + sResult.t0CensorVects[i][j] );
+        atrisk1 -= (events1 + sResult.t1CensorVects[i][j] );
       }
 
       for(j=max0+1 ; j < numTimes; j++){
         t0KMs[i][j] = std::numeric_limits<double>::quiet_NaN();
         for(l = 0; l < numRisks; l++){
-          cIF0s[l][i][j] =  std::numeric_limits<double>::quiet_NaN();
+          cIF0s[l][i][j] = std::numeric_limits<double>::quiet_NaN();
+          sdr0s[l][i][j] = std::numeric_limits<double>::quiet_NaN();
         }
       }
 
       for(j=max1+1 ; j < numTimes; j++){
         t1KMs[i][j] = std::numeric_limits<double>::quiet_NaN();
         for(l = 0; l < numRisks; l++){
-          cIF1s[l][i][j] =  std::numeric_limits<double>::quiet_NaN();
+          cIF1s[l][i][j] = std::numeric_limits<double>::quiet_NaN();
+          sdr1s[l][i][j] = std::numeric_limits<double>::quiet_NaN();
         }
       }
     }
-
+    
+    //Rcerr << "\n";
     List CIFList(numRisks);
     List ERRList(numRisks);
     CharacterVector riskNames(numRisks);

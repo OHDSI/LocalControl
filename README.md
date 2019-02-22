@@ -1,9 +1,6 @@
 LocalControl
 ============
 
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/LocalControl)](https://cran.r-project.org/package=LocalControl)
-[![CRAN_Status_Badge](http://cranlogs.r-pkg.org/badges/LocalControl)](https://cran.r-project.org/package=LocalControl)
-
 Introduction
 ============
 
@@ -13,8 +10,7 @@ See R help pages for examples on how to run each of the package functions.
 
 Getting Involved
 ================
-* Package manual: [LocalControl manual](https://raw.githubusercontent.com/OHDSI/LocalControl/master/extras/LocalControl.pdf)
-* Vignette: [LocalControl vignette](https://github.com/OHDSI/LocalControl/blob/master/vignettes/LocalControl-jss-2018.pdf)
+* Package manual: [LocalControl manual](https://raw.githubusercontent.com/OHDSI/LocalControl/master/extras/LocalControl.pdf) 
 * Developer questions/comments/feedback: <a href="http://forums.ohdsi.org/c/developers">OHDSI Forum</a>
 * We use the <a href="../../issues">GitHub issue tracker</a> for all bugs/issues/enhancements
 

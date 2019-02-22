@@ -60,7 +60,7 @@ A floating point number representing the smallest fraction of the maximum radius
 }
 \description{
 Given a number of bootstrap iterations and the params used to call
-  \code{\link{LocalControl}} with outcomeType = "cross-sectional", this function calls LocalControl nBootstrap times.
+  \code{\link{LocalControl}} with outcomeType = "default", this function calls LocalControl nBootstrap times.
   The 50\% and 95\% quantiles are drawn from the distribution of results to produce the LTD confidence intervals.
 }
 \examples{

@@ -9,7 +9,7 @@
   xlab = "Fraction of maximum radius", main = "")
 }
 \arguments{
-\item{x}{Return object from LocalControl with "cross-sectional" or no specified outcome type.}
+\item{x}{Return object from LocalControl with "default" outcomeType.}
 
 \item{...}{Arguments passed on to \code{graphics::plot}
 \describe{

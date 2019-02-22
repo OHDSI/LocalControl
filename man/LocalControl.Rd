@@ -4,11 +4,12 @@
 \alias{LocalControl}
 \title{Local Control}
 \usage{
-LocalControl(data, modelForm = NULL, outcomeType = "cross-sectional",
+LocalControl(data, modelForm = NULL, outcomeType = "default",
   treatmentColName, outcomeColName, cenCode = 0, clusterVars,
-  timeColName = "", treatmentCode, labelColName = "", radStepType = "exp",
-  radDecayRate = 0.8, radMinFract = 0.01, radiusLevels = numeric(),
-  normalize = TRUE, verbose = FALSE, numThreads = 1)
+  timeColName = "", treatmentCode, labelColName = "",
+  radStepType = "exp", radDecayRate = 0.8, radMinFract = 0.01,
+  radiusLevels = numeric(), normalize = TRUE, verbose = FALSE,
+  numThreads = 1)
 }
 \arguments{
 \item{data}{DataFrame containing all variables which will be used for the analysis.}
@@ -17,7 +18,7 @@ LocalControl(data, modelForm = NULL, outcomeType = "cross-sectional",
 to the primary interface for cross-sectional studies. The formula should be in the following format:
 "outcome ~ treatment | clusterVar1 ... clusterVarN".}
 
-\item{outcomeType}{Specifys the outcome type for the analysis. Defaults to cross-sectional.}
+\item{outcomeType}{Specifys the outcome type for the analysis.}
 
 \item{treatmentColName}{A string containing the name of a column in data.
 The column contains the treatment variable specifying the treatment groups.}

@@ -1,3 +1,11 @@
+LocalControl 1.1.2
+================
+
+### Minor changes
+* Fixed a bug causing survival confidence intervals to be incorrect.
+* Updated vignette to match JSS requests.
+* Changed cardSim data to match the new simulation in the vignette.
+
 LocalControl 1.1.1
 ================
 
