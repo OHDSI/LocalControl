@@ -4,18 +4,30 @@
 \alias{plot.LocalControlCR}
 \title{Plot cumulative incidence functions (CIFs) from Local Control.}
 \usage{
-\method{plot}{LocalControlCR}(x, ..., rad2plot, xlim, ylim = c(0, 1),
-  col1 = "blue", col0 = "red", xlab = "Time",
-  ylab = "Cumulative incidence", legendLocation = "topleft",
-  main = "", group1 = "Treatment 1", group0 = "Treatment 0")
+\method{plot}{LocalControlCR}(
+  x,
+  ...,
+  rad2plot,
+  xlim,
+  ylim = c(0, 1),
+  col1 = "blue",
+  col0 = "red",
+  xlab = "Time",
+  ylab = "Cumulative incidence",
+  legendLocation = "topleft",
+  main = "",
+  group1 = "Treatment 1",
+  group0 = "Treatment 0"
+)
 }
 \arguments{
 \item{x}{Return object from LocalControl with outcomeType = "survival".}
 
-\item{...}{Arguments passed on to \code{graphics::plot}
-\describe{
-  \item{}{}
-}}
+\item{...}{
+  Arguments passed on to \code{\link[graphics:plot.default]{graphics::plot}}
+  \describe{
+    \item{\code{}}{}
+  }}
 
 \item{rad2plot}{The index or name ("rad_#") of the radius to plot. By default, the radius with pct_informative closest to
 0.8 will be selected.}
@@ -55,4 +67,9 @@ results = LocalControl(data = cardSim,
                        clusterVars = c("age", "bmi"))
 plot(results)
 
+}
+\references{
+\itemize{
+   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+}
 }

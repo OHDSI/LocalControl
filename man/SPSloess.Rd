@@ -4,8 +4,17 @@
 \alias{SPSloess}
 \title{LOESS Smoothing of Outcome by Treatment in Supervised Propensiy Scoring}
 \usage{
-SPSloess(envir, dframe, trtm, pscr, yvar, faclev = 3, deg = 2,
-  span = 0.75, fam = "symmetric")
+SPSloess(
+  envir,
+  dframe,
+  trtm,
+  pscr,
+  yvar,
+  faclev = 3,
+  deg = 2,
+  span = 0.75,
+  fam = "symmetric"
+)
 }
 \arguments{
 \item{envir}{Local control classic environment.}

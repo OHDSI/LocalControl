@@ -11,10 +11,11 @@ UPSLTDdist(envir, legloc = "bottomleft", ...)
 
 \item{legloc}{Where to place the legend in the returned plot. Defaults to "bottomleft".}
 
-\item{...}{Arguments passed on to \code{graphics::plot}
-\describe{
-  \item{}{}
-}}
+\item{...}{
+  Arguments passed on to \code{\link[graphics:plot.default]{graphics::plot}}
+  \describe{
+    \item{\code{}}{}
+  }}
 }
 \value{
 Returns the LTD distribution plot.

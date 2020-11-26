@@ -4,17 +4,25 @@
 \alias{plot.LocalControlCS}
 \title{Plots the local treatment difference as a function of radius for LocalControl.}
 \usage{
-\method{plot}{LocalControlCS}(x, ..., nnConfidence, ylim,
-  legendLocation = "bottomleft", ylab = "LTD",
-  xlab = "Fraction of maximum radius", main = "")
+\method{plot}{LocalControlCS}(
+  x,
+  ...,
+  nnConfidence,
+  ylim,
+  legendLocation = "bottomleft",
+  ylab = "LTD",
+  xlab = "Fraction of maximum radius",
+  main = ""
+)
 }
 \arguments{
 \item{x}{Return object from LocalControl with "default" outcomeType.}
 
-\item{...}{Arguments passed on to \code{graphics::plot}
-\describe{
-  \item{}{}
-}}
+\item{...}{
+  Arguments passed on to \code{\link[graphics:plot.default]{graphics::plot}}
+  \describe{
+    \item{\code{}}{}
+  }}
 
 \item{nnConfidence}{Return object from LocalControlNearestNeighborsConfidence}
 
@@ -61,4 +69,9 @@ plot(linRes, ylim =  c(-6000, 3600))
 # Plot the local treatment difference with confidence intervals.
 #plot(linRes, linConfidence)
 
+}
+\references{
+\itemize{
+   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+}
 }

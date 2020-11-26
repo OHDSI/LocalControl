@@ -4,9 +4,17 @@
 \alias{LocalControlClassic}
 \title{Local Control Classic}
 \usage{
-LocalControlClassic(data, clusterVars, treatmentColName, outcomeColName,
-  faclev = 3, scedas = "homo", clusterMethod = "ward",
-  clusterDist = "euclidean", clusterCounts = c(50, 100, 200))
+LocalControlClassic(
+  data,
+  clusterVars,
+  treatmentColName,
+  outcomeColName,
+  faclev = 3,
+  scedas = "homo",
+  clusterMethod = "ward",
+  clusterDist = "euclidean",
+  clusterCounts = c(50, 100, 200)
+)
 }
 \arguments{
 \item{data}{The data frame containing all baseline X covariates.}

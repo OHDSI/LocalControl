@@ -4,7 +4,8 @@
 \name{cardSim}
 \alias{cardSim}
 \title{Simulated cardiac medication data for survival analysis}
-\format{A data frame with 1000 rows and 6 columns:
+\format{
+A data frame with 1000 rows and 6 columns:
 \describe{
  \item{id}{Unique identifier for each row.}
  \item{time}{Time in years to the outcome specified by status.}
@@ -12,7 +13,8 @@
  \item{drug}{Medication the patient received for cardiac health (drug 1 or drug 0).}
  \item{age}{Age of the patient, ranges from 18 to 65 years.}
  \item{bmi}{Patient body mass index. Majority of observations fall between 22 and 30.}
-}}
+}
+}
 \description{
 This dataset was created to demonstrate the effects of Local Control on correcting bias within a set of data.
 }

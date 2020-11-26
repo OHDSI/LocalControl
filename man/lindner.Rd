@@ -4,7 +4,8 @@
 \name{lindner}
 \alias{lindner}
 \title{Lindner Center for Research and Education study on Abciximab cost-effectiveness and survival}
-\format{A data frame with 996 rows and 10 columns:
+\format{
+A data frame with 996 rows and 10 columns:
 \describe{
  \item{lifepres}{Life years preserved post treatment: 0 (died) vs. 11.6 (survived).}
  \item{cardbill}{Cardiac related billing in dollars within 12 months.}
@@ -16,7 +17,8 @@
  \item{acutemi}{Had the patient suffered an acute myocardial infarction witih the last seven days? 1=yes, 0=no.}
  \item{ejecfrac}{Left ventricular ejection fraction.}
  \item{ves1proc}{Number of vessels involved in the first PCI procedure.}
-}}
+}
+}
 \description{
 The effects of Abciximab use on both survival and cardiac billing.
 }

@@ -7,7 +7,6 @@
 \alias{localControlCompetingRisks}
 \alias{plotLocalControlCIF}
 \alias{plotLocalControlLTD}
-\alias{LocalControl-deprecated-package}
 \title{Deprecated LocalControl functions}
 \description{
 These functions are provided for compatibility with previous versions of LocalControl.

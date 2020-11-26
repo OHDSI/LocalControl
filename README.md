@@ -10,9 +10,9 @@ See R help pages for examples on how to run each of the package functions.
 
 Getting Involved
 ================
-* Package manual: [LocalControl manual](https://raw.githubusercontent.com/OHDSI/LocalControl/master/extras/LocalControl.pdf) 
+* Package manual: [LocalControl manual](https://cran.r-project.org/package=LocalControl/LocalControl.pdf) 
 * Developer questions/comments/feedback: <a href="http://forums.ohdsi.org/c/developers">OHDSI Forum</a>
-* We use the <a href="../../issues">GitHub issue tracker</a> for all bugs/issues/enhancements
+* We use the <a href="https://github.com/OHDSI/LocalControl/issues">GitHub issue tracker</a> for all bugs/issues/enhancements
 
 License
 =======

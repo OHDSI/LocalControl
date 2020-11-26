@@ -4,8 +4,18 @@
 \alias{UPSaltdd}
 \title{Artificial Distribution of LTDs from Random Clusters}
 \usage{
-UPSaltdd(envir, dframe, trtm, yvar, faclev = 3, scedas = "homo",
-  NNobj = NA, clus = 50, reps = 10, seed = 12345)
+UPSaltdd(
+  envir,
+  dframe,
+  trtm,
+  yvar,
+  faclev = 3,
+  scedas = "homo",
+  NNobj = NA,
+  clus = 50,
+  reps = 10,
+  seed = 12345
+)
 }
 \arguments{
 \item{envir}{name of the working local control classic environment.}

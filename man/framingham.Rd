@@ -4,7 +4,8 @@
 \name{framingham}
 \alias{framingham}
 \title{Framingham heart study data extract on smoking and hypertension.}
-\format{A data frame with 2316 rows and 11 columns:
+\format{
+A data frame with 2316 rows and 11 columns:
 \describe{
  \item{female}{Sex of the patient. 1=female, 0=male.}
  \item{totchol}{Total cholesterol of patient at study entry.}
@@ -17,7 +18,8 @@
  \item{outcome}{Did the patient die, experience hypertension, or leave the study without experiencing either event.}
  \item{time_outcome}{The time at which the patient experienced outcome.}
  \item{cigpday}{Number of cigarettes smoked per day at time of study entry.}
-}}
+}
+}
 \description{
 Data collected over a 24 year study suitable for competing
   risks survival analysis of hypertension and death as a function of smoking.

@@ -4,11 +4,23 @@
 \alias{LocalControlNearestNeighborsConfidence}
 \title{Provides a bootstrapped confidence interval estimate for LocalControl LTDs.}
 \usage{
-LocalControlNearestNeighborsConfidence(data, nBootstrap, randSeed,
-  treatmentColName, treatmentCode = "", outcomeColName, clusterVars,
-  labelColName = "", numThreads = 1, radiusLevels = numeric(),
-  radStepType = "exp", radDecayRate = 0.8, radMinFract = 0.01,
-  normalize = TRUE, verbose = FALSE)
+LocalControlNearestNeighborsConfidence(
+  data,
+  nBootstrap,
+  randSeed,
+  treatmentColName,
+  treatmentCode = "",
+  outcomeColName,
+  clusterVars,
+  labelColName = "",
+  numThreads = 1,
+  radiusLevels = numeric(),
+  radStepType = "exp",
+  radDecayRate = 0.8,
+  radMinFract = 0.01,
+  normalize = TRUE,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{data}{DataFrame containing all variables which will be used for the analysis.}
@@ -88,4 +100,10 @@ confResults = LocalControlNearestNeighborsConfidence(
 plot(results, confResults)
 }
 
+}
+\references{
+\itemize{
+   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+   \item Kereiakes DJ, Obenchain RL, Barber BL, Smith A, McDonald M, Broderick TM, Runyon JP, Shimshak TM, Schneider JF, Hattemer CR, Roth EM, Whang DD, Cocks D, Abbottsmith CW. Abciximab provides cost-effective survival advantage in high-volume interventional practice. Am Heart J. 2000 Oct;140(4):603–610. PMID: 11011333
+}
 }

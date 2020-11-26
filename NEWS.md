@@ -1,3 +1,9 @@
+LocalControl 1.1.2.2
+================
+
+### Minor changes
+* Added citation file and doi for vignette's JSS publication.
+
 LocalControl 1.1.2
 ================
 
