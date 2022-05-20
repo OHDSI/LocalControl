@@ -2,8 +2,8 @@ Package: LocalControl
 Type: Package
 Title: Nonparametric Methods for Generating High Quality Comparative
         Effectiveness Evidence
-Version: 1.1.2.2
-Date: 2020-11-24
+Version: 1.1.3
+Date: 2022-05-20
 Authors@R: c(
   person(given = "Nicolas R.", family = "Lauve", role = "aut", comment=c(ORCID="0000-0002-9348-0319")),
   person(given = "Stuart J.", family = "Nelson", role = "aut", comment=c(ORCID="0000-0002-8756-0179")),
@@ -33,7 +33,7 @@ LinkingTo: Rcpp
 Imports: Rcpp, gss, cluster, lattice, stats, graphics
 Suggests: colorspace, RColorBrewer, TeachingDemos, data.table, ggplot2,
         gridExtra, rpart, rpart.plot, xtable
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Encoding: UTF-8
 NeedsCompilation: yes
 Depends: R (>= 3.0.0)
