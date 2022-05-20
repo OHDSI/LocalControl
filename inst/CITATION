@@ -1,0 +1,23 @@
+bibentry(bibtype = "Article",
+         key = "JSSv096i04",
+         author = c(person(given = c("Nicolas", "R"),
+                           family = "Lauve"),
+                    person(given = c("Stuart", "J"),
+                           family = "Nelson"),
+                    person(given = c("S", "Stanley"),
+                           family = "Young"),
+                    person(given = c("Robert", "L"),
+                           family = "Obenchain"),
+                    person(given = c("Christophe", "G"),
+                           family = "Lambert")),
+         title = "LocalControl: An R Package for Comparative Safety and Effectiveness Research",
+         journal = "Journal of Statistical Software",
+         year = "2020",
+         volume = "96",
+         number = "4",
+         pages = "1--32",
+         abstract = "The LocalControl R package implements novel approaches to address biases and confounding when comparing treatments or exposures in observational studies of outcomes. While designed and appropriate for use in comparative safety and effectiveness research involving medicine and the life sciences, the package can be used in other situations involving outcomes with multiple confounders. LocalControl is an open-source tool for researchers whose aim is to generate high quality evidence using observational data. The package implements a family of methods for non-parametric bias correction when comparing treatments in observational studies, including survival analysis settings, where competing risks and/or censoring may be present. The approach extends to bias-corrected personalized predictions of treatment outcome differences, and analysis of heterogeneity of treatment effect-sizes across patient subgroups.",
+         doi = "10.18637/jss.v096.i04",
+	 header       = "To cite LocalControl in publications use:"
+)
+
