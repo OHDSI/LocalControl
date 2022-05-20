@@ -2090,7 +2090,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
       stop("Second argument to SPSlogit must be the name of a Data Frame in the working environment.")
     if (missing(trtm))
       stop("Third argument to SPSlogit must name the Treatment factor.")
-    if (missing(form) || class(form) != "formula")
+    if (missing(form) || (as.character(class(form)) != "formula"))
         stop("Second argument to SPSlogit must be a valid formula.")
     trtm <- deparse(form[[2]])
     dfname = deparse(substitute(dframe))

@@ -559,7 +559,7 @@ plot.LocalControlCS = function(x, ..., nnConfidence, ylim,
 #' @export
 LocalControlCompetingRisksConfidence <- function(LCCompRisk, confLevel = "95%", confTransform = "asin"){
 
-  if(class(LCCompRisk) != "LocalControlCR"){
+  if(as.character(class(LCCompRisk)) != "LocalControlCR"){
     stop("LCCompRisk param must be type 'LocalControlCR' returned from the function 'LocalControl()' where outcomeType = 'survival'")
   }
 
