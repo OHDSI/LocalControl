@@ -1,3 +1,11 @@
+LocalControl 1.1.3
+================
+
+### Minor changes
+* Updated vignette to the PDF matching the published Journal of
+Statistical Software manuscript, shrinking file size.
+
+
 LocalControl 1.1.2.2
 ================
 
