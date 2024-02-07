@@ -9,6 +9,7 @@
 // [[Rcpp::plugins(cpp11)]]
 
 #include <Rcpp.h>
+#include <pthread.h>
 #include <unistd.h>
 
 using namespace Rcpp;
