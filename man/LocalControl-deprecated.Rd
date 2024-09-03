@@ -2,6 +2,7 @@
 % Please edit documentation in R/deprecatedLC.R
 \docType{package}
 \name{LocalControl-deprecated}
+\alias{-package}
 \alias{LocalControl-deprecated}
 \alias{localControlNearestNeighbors}
 \alias{localControlCompetingRisks}
