@@ -68,7 +68,7 @@ SPSloess
    variable contains propensity score "cell means" of 0.005 to 0.995 in steps of 0.010.
    Variables F0, S0 and C0 for treatment 0 and variables F1, S1 and C1 for treatment 1 contain
    fitted smooth spline values, standard error estimates and patient counts, respectively.  The
-   DIF variable is simply (F1\-F0), the SED variable is sqrt(S1\^2+S0\^2), the HST variable is
+   DIF variable is simply (F1-F0), the SED variable is sqrt(S1*S1+S0*S0), the HST variable is
    proportional to (C0+C1), and the DEN variable is the estimated probability density of patients
    along the PS axis.  Observations with "NA" for variables F0, S0, F1 or S1 represent "extremes"
    where the lowess fits could not be extrapolated because no observed outcomes were available.}
