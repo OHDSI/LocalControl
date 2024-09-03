@@ -1,7 +1,6 @@
 \documentclass[nojss,shortnames,article]{jss}
 
-%\VignetteIndexEntry{LocalControl-jss-2018}
-%\VignetteDepends{colorspace, RColorBrewer, TeachingDemos, data.table, ggplot2, gridExtra, rpart, rpart.plot, xtable}
+%\VignetteIndexEntry{LocalControl-jss-2020}
 %% -- LaTeX packages and custom commands ---------------------------------------
 
 %% recommended packages
@@ -96,7 +95,7 @@ options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
   MSC10-5550\\
   1 University of New Mexico\\
   Albuquerque, NM 87131, USA\\
-  E-mail: \email{cglambert[at]unm.edu}\\
+  E-mail: \email{cglambert[at]salud.unm.edu}\\
   URL: \url{http://christophelambert.org}
 }
 <<init_libs_vars_calcs, echo = F, eval = T>>=
