@@ -137,7 +137,7 @@ Implements a non-parametric methodology for correcting biases when comparing the
 }
 \references{
 \itemize{
-   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
    \item Fischer K, Gartner B, Kutz M. Fast Smallest-Enclosing-Ball Computation in High Dimensions. In: Algorithms - ESA 2003. Springer, Berlin, Heidelberg; 2003:630-641.
    \item Martin Kutz, Kaspar Fischer, Bernd Gartner. miniball-1.0.3. \url{https://github.com/hbf/miniball}.
 }

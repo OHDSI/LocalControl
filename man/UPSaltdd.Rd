@@ -20,25 +20,25 @@ UPSaltdd(
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{dframe}{{Name of data.frame containing a treatment-factor and the outcome y-variable.}}
+\item{dframe}{Name of data.frame containing a treatment-factor and the outcome y-variable.}
 
-\item{trtm}{{Name of treatment factor variable with two levels.}}
+\item{trtm}{Name of treatment factor variable with two levels.}
 
-\item{yvar}{{Name of continuous outcome variable.}}
+\item{yvar}{Name of continuous outcome variable.}
 
-\item{faclev}{{Maximum number of different numerical values an outcome variable can assume
+\item{faclev}{Maximum number of different numerical values an outcome variable can assume
 without automatically being converted into a "factor" variable; faclev=1 causes a binary
-indicator to be treated as a continuous variable determining an average or proportion.}}
+indicator to be treated as a continuous variable determining an average or proportion.}
 
-\item{scedas}{{Scedasticity assumption: "homo" or "hete"}}
+\item{scedas}{Scedasticity assumption: "homo" or "hete"}
 
-\item{NNobj}{{Name of an existing UPSnnltd object or NA.}}
+\item{NNobj}{Name of an existing UPSnnltd object or NA.}
 
-\item{clus}{{Number of Random Clusters requested per Replication; ignored when NNobj is not NA.}}
+\item{clus}{Number of Random Clusters requested per Replication; ignored when NNobj is not NA.}
 
-\item{reps}{{Number of overall Replications, each with the same number of requested clusters.}}
+\item{reps}{Number of overall Replications, each with the same number of requested clusters.}
 
-\item{seed}{{Seed for Monte Carlo random number generator.}}
+\item{seed}{Seed for Monte Carlo random number generator.}
 }
 \value{
 \describe{
@@ -81,17 +81,17 @@ Multiple calls to UPSaltdd() for different UPSnnltd objects or different numbers
  clusters are typically made after first invoking UPSgraph().
 }
 \references{
-{
-  Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+\itemize{
+  \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
+ \item Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
  in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}:
  41-55.
 
- Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
+ \item Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
  \emph{Biometrics} \bold{36}: 293-298.
 
 }

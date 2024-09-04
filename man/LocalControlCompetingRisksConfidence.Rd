@@ -38,7 +38,7 @@ the creation of 90\%, 95\%, 98\%, and 99\% confidence intervals with linear, log
 }
 \references{
 \itemize{
-   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+   \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
    \item Choudhury JB (2002) Non-parametric confidence interval estimation for competing risks analysis: application to contraceptive data. Stat Med 21:1129-1144. doi: 10.1002/sim.1070
 }
 }

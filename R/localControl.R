@@ -94,7 +94,7 @@
 #' }
 #' @references
 #' \itemize{
-#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
 #'    \item Fischer K, Gartner B, Kutz M. Fast Smallest-Enclosing-Ball Computation in High Dimensions. In: Algorithms - ESA 2003. Springer, Berlin, Heidelberg; 2003:630-641.
 #'    \item Martin Kutz, Kaspar Fischer, Bernd Gartner. miniball-1.0.3. \url{https://github.com/hbf/miniball}.
 #' }
@@ -333,7 +333,7 @@ data.frame("radius" = lccs$rads,
 #'   plot a corrected and uncorrected cumulative incidence function (CIF) for both groups.
 #'
 #' @param x Return object from LocalControl with outcomeType = "survival".
-#' @inheritDotParams graphics::plot -x -y
+#' @inheritDotParams graphics::plot.default -x -y
 #' @param rad2plot The index or name ("rad_#") of the radius to plot. By default, the radius with pct_informative closest to
 #'   0.8 will be selected.
 #' @param xlim The x axis bounds. Defaults to c(0, max(lccrResults$Failtimes)).
@@ -348,7 +348,7 @@ data.frame("radius" = lccs$rads,
 #' @param group0 The name of the secondary group (Treatment 0).
 #' @references
 #' \itemize{
-#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
 #' }
 #' @examples
 #' data("cardSim")
@@ -406,7 +406,7 @@ plot.LocalControlCR = function(x, ..., rad2plot, xlim, ylim = c(0,1),
 #' while the x axis represents the percentage of the maximum radius. If the confidence summary (nnConfidence)
 #' is provided, the 50\% and 95\% confidence estimates are also plotted.
 #' @param x Return object from LocalControl with "default" outcomeType.
-#' @inheritDotParams graphics::plot -x -y
+#' @inheritDotParams graphics::plot.default -x -y
 #' @param nnConfidence Return object from LocalControlNearestNeighborsConfidence
 #' @param ylim The y axis bounds. Defaults to c(0,1).
 #' @param legendLocation The location to place the legend. Default "topleft".
@@ -416,7 +416,7 @@ plot.LocalControlCR = function(x, ..., rad2plot, xlim, ylim = c(0,1),
 #'
 #' @references
 #' \itemize{
-#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
 #' }
 #' 
 #' @examples
@@ -540,7 +540,7 @@ plot.LocalControlCS = function(x, ..., nnConfidence, ylim,
 #'
 #' @references
 #' \itemize{
-#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
 #'    \item Choudhury JB (2002) Non-parametric confidence interval estimation for competing risks analysis: application to contraceptive data. Stat Med 21:1129-1144. doi: 10.1002/sim.1070
 #' }
 #'
@@ -665,8 +665,8 @@ LocalControlCompetingRisksConfidence <- function(LCCompRisk, confLevel = "95%", 
 #' @param randSeed The seed used to set random number generator state prior to resampling. No default value, provide one for reproducible results.
 #' @references
 #' \itemize{
-#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1–32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
-#'    \item Kereiakes DJ, Obenchain RL, Barber BL, Smith A, McDonald M, Broderick TM, Runyon JP, Shimshak TM, Schneider JF, Hattemer CR, Roth EM, Whang DD, Cocks D, Abbottsmith CW. Abciximab provides cost-effective survival advantage in high-volume interventional practice. Am Heart J. 2000 Oct;140(4):603–610. PMID: 11011333
+#'    \item Lauve NR, Nelson SJ, Young SS, Obenchain RL, Lambert CG. LocalControl: An R Package for Comparative Safety and Effectiveness Research. Journal of Statistical Software. 2020. p. 1-32. Available from: http://dx.doi.org/10.18637/jss.v096.i04
+#'    \item Kereiakes DJ, Obenchain RL, Barber BL, Smith A, McDonald M, Broderick TM, Runyon JP, Shimshak TM, Schneider JF, Hattemer CR, Roth EM, Whang DD, Cocks D, Abbottsmith CW. Abciximab provides cost-effective survival advantage in high-volume interventional practice. Am Heart J. 2000 Oct;140(4):603-610. PMID: 11011333
 #' }
 #' 
 #' @examples

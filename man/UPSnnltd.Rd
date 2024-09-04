@@ -9,7 +9,7 @@ UPSnnltd(envir, numclust)
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{numclust}{{Number of clusters in baseline X-covariate space.}}
+\item{numclust}{Number of clusters in baseline X-covariate space.}
 }
 \value{
 An output list object of class UPSnnltd:
@@ -65,17 +65,17 @@ Multiple calls to UPSnnltd(n) for varying numbers of clusters, n, are typically 
  optionally, displays this distribution in a "Snowball" plot.
 }
 \references{
-{
-  Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+\itemize{
+ \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
+ \item Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
  in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}:
  41--55.
 
- Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
+ \item Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
  \emph{Biometrics} \bold{36}: 293-298.
 }
 }

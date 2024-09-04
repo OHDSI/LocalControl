@@ -9,11 +9,11 @@ UPShclus(envir, dframe, xvars, method, metric)
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{dframe}{{Name of data.frame containing baseline X covariates.}}
+\item{dframe}{Name of data.frame containing baseline X covariates.}
 
-\item{xvars}{{List of names of X variable(s).}}
+\item{xvars}{List of names of X variable(s).}
 
-\item{method}{{Hierarchical Clustering Method: "diana", "agnes" or "hclus".}}
+\item{method}{Hierarchical Clustering Method: "diana", "agnes" or "hclus".}
 
 \item{metric}{A valid distance metric for clustering.}
 }
@@ -38,20 +38,20 @@ The first step in an Unsupervised Propensity Scoring alalysis is always
  key initial step.
 }
 \references{
-{
- Kaufman L, Rousseeuw PJ.  (1990) \bold{Finding Groups in Data.  An Introduction to
+\itemize{
+ \item Kaufman L, Rousseeuw PJ.  (1990) \bold{Finding Groups in Data.  An Introduction to
   Cluster Analysis}.  New York: John Wiley and Sons.
 
- Kereiakes DJ, Obenchain RL, Barber BL, et al. (2000) Abciximab provides
+ \item Kereiakes DJ, Obenchain RL, Barber BL, et al. (2000) Abciximab provides
   cost effective survival advantage in high volume interventional practice.
   \emph{Am Heart J} \bold{140}: 603-610.
 
- Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+ \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
   \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
+ \item Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
  \emph{Biometrics} \bold{36}: 293-298.
 }
 }

@@ -9,14 +9,14 @@ UPSgraph(envir, nncol = "red", nwcol = "green3", ivcol = "blue", ...)
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{nncol}{{optional; string specifying color for display of the Mean of the LTD
-distribution when weighted by cluster size from any calls to UPSnnltd().}}
+\item{nncol}{optional; string specifying color for display of the Mean of the LTD
+distribution when weighted by cluster size from any calls to UPSnnltd().}
 
-\item{nwcol}{{optional; string specifying color for display of the Mean of the LTD
-distribution when weighted inversely proportional to variance from any calls to UPSnnltd().}}
+\item{nwcol}{optional; string specifying color for display of the Mean of the LTD
+distribution when weighted inversely proportional to variance from any calls to UPSnnltd().}
 
-\item{ivcol}{{optional; string specifying color for display of the Difference in LOA
-predictions, at PS = 100\% minus that at PS = 0\%, from any calls to UPSivadj().}}
+\item{ivcol}{optional; string specifying color for display of the Difference in LOA
+predictions, at PS = 100\% minus that at PS = 0\%, from any calls to UPSivadj().}
 
 \item{...}{Additional arguments to pass to the plotting function.}
 }
@@ -31,16 +31,16 @@ The third phase of Unsupervised Propensity Scoring is a graphical Sensitivity
  the number of clusters.
 }
 \references{
-{
-Kaufman L, Rousseeuw PJ. (1990) \bold{Finding Groups in Data.  An Introduction to
+\itemize{
+ \item Kaufman L, Rousseeuw PJ. (1990) \bold{Finding Groups in Data.  An Introduction to
  Cluster Analysis}.  \emph{New York: John Wiley and Sons}.
 
- Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+ \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
+ \item Rubin DB. (1980) Bias reduction using Mahalanobis metric matching.
  \emph{Biometrics} \bold{36}: 293-298.
 }
 }

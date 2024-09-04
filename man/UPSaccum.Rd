@@ -9,17 +9,17 @@ UPSaccum(envir, dframe, trtm, yvar, faclev = 3, scedas = "homo")
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{dframe}{{Name of data.frame containing the X, t & Y variables.}}
+\item{dframe}{Name of data.frame containing the X, t & Y variables.}
 
-\item{trtm}{{Name of treatment factor variable.}}
+\item{trtm}{Name of treatment factor variable.}
 
-\item{yvar}{{Name of outcome Y variable.}}
+\item{yvar}{Name of outcome Y variable.}
 
-\item{faclev}{{Maximum number of different numerical values an outcome variable can assume
+\item{faclev}{Maximum number of different numerical values an outcome variable can assume
 without automatically being converted into a "factor" variable; faclev=1 causes a binary
-indicator to be treated as a continuous variable determining an average or proportion.}}
+indicator to be treated as a continuous variable determining an average or proportion.}
 
-\item{scedas}{{Scedasticity assumption: "homo" or "hete"}}
+\item{scedas}{Scedasticity assumption: "homo" or "hete"}
 }
 \value{
 \describe{
@@ -51,11 +51,11 @@ The second phase in an Unsupervised Propensity Scoring analysis is to prepare to
  thus, more and more compact in covariate X-space.
 }
 \references{
-{
- Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+\itemize{
+ \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
  \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 }
 }
 \seealso{

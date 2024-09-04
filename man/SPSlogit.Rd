@@ -44,27 +44,27 @@ Use a logistic regression model to predict Treatment Selection from Patient
  Baseline X-covariates in Supervised Propensity Scoring.
 }
 \details{
-{The first phase of Supervised Propensity Scoring is to develop a logit (or probit) model
+The first phase of Supervised Propensity Scoring is to develop a logit (or probit) model
  predicting treatment choice from patient baseline X characteristics.  SPSlogit uses a call to
- glm()with family = binomial() to fit a logistic regression.}
+ glm()with family = binomial() to fit a logistic regression.
 }
 \references{
-{
-Cochran WG. (1968) The effectiveness of adjustment by subclassification
+\itemize{
+ \item Cochran WG. (1968) The effectiveness of adjustment by subclassification
  in removing bias in observational studies. \emph{Biometrics} \bold{24}:
  205-213.
 
- Kereiakes DJ, Obenchain RL, Barber BL, et al. (2000) Abciximab provides
+ \item Kereiakes DJ, Obenchain RL, Barber BL, et al. (2000) Abciximab provides
  cost effective survival advantage in high volume interventional practice.
  \emph{Am Heart J} \bold{140}: 603-610.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
+ \item Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
  in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}:
  41-55.
 
- Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
+ \item Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
  Using Subclassification on a Propensity Score. \emph{J Amer Stat Assoc}
  \bold{79}: 516-524.
 }

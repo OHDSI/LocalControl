@@ -12,9 +12,50 @@ UPSLTDdist(envir, legloc = "bottomleft", ...)
 \item{legloc}{Where to place the legend in the returned plot. Defaults to "bottomleft".}
 
 \item{...}{
-  Arguments passed on to \code{\link[graphics:plot.default]{graphics::plot}}
+  Arguments passed on to \code{\link[graphics:plot.default]{graphics::plot.default}}
   \describe{
-    \item{\code{}}{}
+    \item{\code{type}}{1-character string giving the type of plot desired.  The
+    following values are possible, for details, see \code{\link[graphics]{plot}}:
+    \code{"p"} for points, \code{"l"} for lines,
+    \code{"b"} for both points and lines,
+    \code{"c"} for empty points joined by lines,
+    \code{"o"} for overplotted points and lines,
+    \code{"s"} and \code{"S"} for stair steps and
+    \code{"h"} for histogram-like vertical lines.  Finally,
+    \code{"n"} does not produce any points or lines.}
+    \item{\code{xlim}}{the x limits (x1, x2) of the plot.  Note that \code{x1 > x2}
+    is allowed and leads to a \sQuote{reversed axis}.
+
+    The default value, \code{NULL}, indicates that the range of the
+    \link{finite} values to be plotted should be used.}
+    \item{\code{ylim}}{the y limits of the plot.}
+    \item{\code{log}}{a character string which contains \code{"x"} if the x axis
+    is to be logarithmic, \code{"y"} if the y axis is to be logarithmic
+    and \code{"xy"} or \code{"yx"} if both axes are to be logarithmic.}
+    \item{\code{main}}{a main title for the plot, see also \code{\link[graphics]{title}}.}
+    \item{\code{sub}}{a subtitle for the plot.}
+    \item{\code{xlab}}{a label for the x axis, defaults to a description of \code{x}.}
+    \item{\code{ylab}}{a label for the y axis, defaults to a description of \code{y}.}
+    \item{\code{ann}}{a logical value indicating whether the default annotation
+    (title and x and y axis labels) should appear on the plot.}
+    \item{\code{axes}}{a logical value indicating whether both axes should be drawn on
+    the plot.  Use \link[graphics]{graphical parameter} \code{"xaxt"} or \code{"yaxt"}
+    to suppress just one of the axes.}
+    \item{\code{frame.plot}}{a logical indicating whether a box should be drawn
+    around the plot.}
+    \item{\code{panel.first}}{an \sQuote{expression} to be evaluated after the
+    plot axes are set up but before any plotting takes place.  This can
+    be useful for drawing background grids or scatterplot smooths.  Note
+    that this works by lazy evaluation: passing this argument from other
+    \code{plot} methods may well not work since it may be evaluated too
+    early.}
+    \item{\code{panel.last}}{an expression to be evaluated after plotting has
+    taken place but before the axes, title and box are added.  See the
+    comments about \code{panel.first}.}
+    \item{\code{asp}}{the \eqn{y/x} aspect ratio, see \code{\link[graphics]{plot.window}}.}
+    \item{\code{xgap.axis,ygap.axis}}{the \eqn{x/y} axis gap factors, passed as
+    \code{gap.axis} to the two \code{\link[graphics]{axis}()} calls (when
+    \code{axes} is true, as per default).}
   }}
 }
 \value{

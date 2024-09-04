@@ -2,24 +2,24 @@
 % Please edit documentation in R/clusteringLC.R
 \name{SPSoutco}
 \alias{SPSoutco}
-\title{{Examine Treatment Differences on an Outcome Measure in Supervised Propensiy Scoring}}
+\title{Examine Treatment Differences on an Outcome Measure in Supervised Propensiy Scoring}
 \usage{
 SPSoutco(envir, dframe, trtm, qbin, yvar, faclev = 3)
 }
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{dframe}{{Name of augmented data.frame written to the appn="" argument of SPSlogit().}}
+\item{dframe}{Name of augmented data.frame written to the appn="" argument of SPSlogit().}
 
-\item{trtm}{{Name of treatment factor variable.}}
+\item{trtm}{Name of treatment factor variable.}
 
-\item{qbin}{{Name of variable containing the PS bin number for each patient.}}
+\item{qbin}{Name of variable containing the PS bin number for each patient.}
 
-\item{yvar}{{Name of an outcome Y variable.}}
+\item{yvar}{Name of an outcome Y variable.}
 
-\item{faclev}{{Maximum number of different numerical values an X-covariate can assume without
+\item{faclev}{Maximum number of different numerical values an X-covariate can assume without
 automatically being converted into a "factor" variable; faclev=1 causes a binary indicator to
-be treated as a continuous variable determining an average or proportion.}}
+be treated as a continuous variable determining an average or proportion.}
 }
 \value{
 An output list object of class SPSoutco:
@@ -59,8 +59,8 @@ An output list object of class SPSoutco:
 }
 }
 \description{
-{Examine Within-Bin Treatment Differences on an Outcome Measure and Average these
- Differences across Bins.}
+Examine Within-Bin Treatment Differences on an Outcome Measure and Average these
+ Differences across Bins.
 }
 \details{
 Once the second phase of Supervised Propensity Scoring confirms, using SPSbalan(), that
@@ -69,24 +69,24 @@ Once the second phase of Supervised Propensity Scoring confirms, using SPSbalan(
  Graphical displays of SPSoutco() results feature R barplot() invocations.
 }
 \references{
-{
- Cochran WG. (1968) The effectiveness of adjustment by subclassification
+\itemize{
+ \item Cochran WG. (1968) The effectiveness of adjustment by subclassification
  in removing bias in observational studies. \emph{Biometrics} \bold{24}:
  205-213.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
- Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
+ \item Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
  in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}:
  41-55.
 
- Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
+ \item Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
  Using Subclassification on a Propensity Score. \emph{J Amer Stat Assoc}
  \bold{79}: 516-524.
 }
 }
 \seealso{
-{\code{\link{SPSlogit}}, \code{\link{SPSbalan}} and \code{\link{SPSnbins}}.}
+\code{\link{SPSlogit}}, \code{\link{SPSbalan}} and \code{\link{SPSnbins}}.
 }
 \author{
 Bob Obenchain <wizbob@att.net>

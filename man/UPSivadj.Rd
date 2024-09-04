@@ -9,7 +9,7 @@ UPSivadj(envir, numclust)
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{numclust}{{Number of clusters in baseline X-covariate space.}}
+\item{numclust}{Number of clusters in baseline X-covariate space.}
 }
 \value{
 An output list object of class UPSivadj:
@@ -60,20 +60,20 @@ Multiple calls to UPSivadj(n) for varying numbers of clusters n are made after f
  smoothes the LATE distribution when plotted versus within cluster propensity score percentages.
 }
 \references{
-{
- Imbens GW, Angrist JD. (1994) Identification and Estimation  of
+\itemize{
+ \item Imbens GW, Angrist JD. (1994) Identification and Estimation  of
   Local Average Treatment Effects (LATEs). \emph{Econometrica} \bold{62}: 467-475.
 
- Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
+ \item Obenchain RL. (2004) Unsupervised Propensity Scoring: NN and IV Plots.
   \emph{Proceedings of the American Statistical Association (on CD)} 8 pages.
 
- Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.-
+ \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.-
 
- McClellan M, McNeil BJ, Newhouse JP. (1994) Does More Intensive Treatment of
+ \item McClellan M, McNeil BJ, Newhouse JP. (1994) Does More Intensive Treatment of
   Myocardial Infarction in the Elderly Reduce Mortality?: Analysis Using Instrumental
   Variables. \emph{JAMA} \bold{272}: 859-866.
 
- Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
+ \item Rosenbaum PR, Rubin RB. (1983) The Central Role of the Propensity Score
   in Observational Studies for Causal Effects. \emph{Biometrika} \bold{70}: 41-55.
 }
 }

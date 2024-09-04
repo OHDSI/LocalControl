@@ -44,7 +44,7 @@ Express Expected Outcome by Treatment as LOESS Smooths of Fitted Propensity Scor
 \details{
 SPSloess
 
-{Once one has fitted a somewhat smooth curve through scatters of observed outcomes, Y,
+Once one has fitted a somewhat smooth curve through scatters of observed outcomes, Y,
  versus the fitted propensity scores, X, for the patients in each of the two treatment groups,
  one can consider the question: "Over the range where both smooth curves are defined (i.e. their
  common support), what is the (weighted) average signed difference between these two curves?"
@@ -62,7 +62,7 @@ SPSloess
  is known to differ from that of the patients within the current study, that population weighted
  average would also be of interest.  Thus the SPSloess() output object contains two data frames,
  logrid and lofit, useful in further computations.
-}
+
 \describe{
   \item{logrid}{loess grid data.frame containing 11 variables and 100 observations. The PS
    variable contains propensity score "cell means" of 0.005 to 0.995 in steps of 0.010.
@@ -81,17 +81,17 @@ SPSloess
 }
 }
 \references{
-{
-  Cleveland WS, Devlin SJ. (1988) Locally-weighted regression: an
+\itemize{
+  \item Cleveland WS, Devlin SJ. (1988) Locally-weighted regression: an
   approach to regression analysis by local fitting. \emph{J Amer Stat Assoc}
   \bold{83}: 596-610.
 
-  Cleveland WS, Grosse E, Shyu WM. (1992) Local regression models. Chapter 8 of
+  \item Cleveland WS, Grosse E, Shyu WM. (1992) Local regression models. Chapter 8 of
   \bold{Statistical Models in S} eds Chambers JM and Hastie TJ. \emph{Wadsworth & Brooks/Cole}.
 
-  Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+  \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
-  Ripley BD, loess() based on the 'cloess' package of Cleveland, Grosse and Shyu.
+  \item Ripley BD, loess() based on the 'cloess' package of Cleveland, Grosse and Shyu.
 }
 }
 \author{

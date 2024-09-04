@@ -9,13 +9,13 @@ SPSnbins(envir, dframe, prnk, qbin, bins = 8)
 \arguments{
 \item{envir}{name of the working local control classic environment.}
 
-\item{dframe}{{Name of data.frame of the form output by SPSlogit().}}
+\item{dframe}{Name of data.frame of the form output by SPSlogit().}
 
-\item{prnk}{{Name of PS tied-rank variable from previous call to SPSlogit().}}
+\item{prnk}{Name of PS tied-rank variable from previous call to SPSlogit().}
 
-\item{qbin}{{Name of variable to contain the re-assigned bin number for each patient.}}
+\item{qbin}{Name of variable to contain the re-assigned bin number for each patient.}
 
-\item{bins}{{Number of PS bins desired.}}
+\item{bins}{Number of PS bins desired.}
 }
 \value{
 An output data.frame with new variables inserted:
@@ -24,7 +24,7 @@ An output data.frame with new variables inserted:
 }
 }
 \description{
-{Change the Number of Bins in Supervised Propensiy Scoring}
+Change the Number of Bins in Supervised Propensiy Scoring
 }
 \details{
 Part or all of the first phase of Supervised Propensity Scoring will need to be redone
@@ -34,14 +34,14 @@ Part or all of the first phase of Supervised Propensity Scoring will need to be 
   adding interaction and/or curvature terms in continuous X-covariates.
 }
 \references{
-{
-  Cochran WG. (1968) The effectiveness of adjustment by subclassification
+\itemize{
+  \item Cochran WG. (1968) The effectiveness of adjustment by subclassification
   in removing bias in observational studies. \emph{Biometrics} \bold{24}:
   205-213.
 
-  Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
+  \item Obenchain RL. (2011) \bold{USPSinR.pdf}  USPS R-package vignette, 40 pages.
 
-  Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
+  \item Rosenbaum PR, Rubin DB. (1984) Reducing Bias in Observational Studies
   Using Subclassification on a Propensity Score. \emph{J Amer Stat Assoc}
   \bold{79}: 516-524.
 }
