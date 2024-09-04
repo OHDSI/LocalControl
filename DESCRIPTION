@@ -3,7 +3,7 @@ Type: Package
 Title: Nonparametric Methods for Generating High Quality Comparative
         Effectiveness Evidence
 Version: 1.1.4
-Date: 2024-09-03
+Date: 2024-09-04
 Authors@R: c(
   person(given = "Nicolas R.", family = "Lauve", role = "aut", comment=c(ORCID="0000-0002-9348-0319")),
   person(given = "Stuart J.", family = "Nelson", role = "aut", comment=c(ORCID="0000-0002-8756-0179")),
