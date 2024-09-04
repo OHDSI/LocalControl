@@ -32,7 +32,7 @@ BugReports: https://github.com/OHDSI/LocalControl/issues
 LazyData: TRUE
 LinkingTo: Rcpp
 Imports: Rcpp, gss, cluster, lattice, stats, graphics
-Suggests: colorspace, RColorBrewer, TeachingDemos, data.table, ggplot2,
+Suggests: colorspace, RColorBrewer, data.table, ggplot2,
         gridExtra, rpart, rpart.plot, xtable, knitr
 VignetteBuilder: knitr
 RoxygenNote: 7.3.2
