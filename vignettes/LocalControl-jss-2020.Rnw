@@ -139,10 +139,6 @@ if(!require("xtable")){
    install.packages("xtable")
    library("xtable")
 }
-if(!require("TeachingDemos")){
-   install.packages("TeachingDemos")
-   library("TeachingDemos")
-}
 
 # frequently used variables
 data(lindner)
@@ -1187,27 +1183,54 @@ sSim$ci = 1 - sSim$time/maxtime
 sSim$pca = apply(X = sSim, MARGIN = 1, FUN = function(x) {setColAlpha(col = x["pc"], intensity = x["ci"])})
 sSim = sSim[sample(nrow(sSim), nrow(sSim)),]
 
-par(mar = c(2.6,2.6,1,.9), mgp = c(1.6, 0.5, 0))
+# Main plot setup
+par(mar = c(2.6,2.6,1,1), mgp = c(1.6, 0.5, 0))
 plot(NA,xlim = c(0,30), ylim = c(0,1),xaxs="i", yaxs="i", xlab = "Time in years",cex.lab = 1, cex.axis = 1, cex = 1,
   ylab = "Survival probability")
+
 grid()
 
-lines(x =sSimFTs, y=sSimT1R1, xlim = c(0,30), ylim = c(0,1), col = t1Blue, lty = 2, lwd = 2)
-lines(x = sSimFTs, y=sSimT0R1, xlim = c(0,30), ylim = c(0,1), col = t0Red, lty = 2, lwd = 2)
-lines(x = sSimFTs, y=sSimT1R21, xlim = c(0,30), ylim = c(0,1), col = t1Blue, lwd = 2)
-lines(x = sSimFTs, y=sSimT0R21, xlim = c(0,30), ylim = c(0,1), col = t0Red, lwd = 2)
+# Adding survival curves
+lines(x = sSimFTs, y = sSimT1R1, col = t1Blue, lty = 2, lwd = 2)
+lines(x = sSimFTs, y = sSimT0R1, col = t0Red, lty = 2, lwd = 2)
+lines(x = sSimFTs, y = sSimT1R21, col = t1Blue, lwd = 2)
+lines(x = sSimFTs, y = sSimT0R21, col = t0Red, lwd = 2)
 
 box()
 legend("bottomleft", legend = c("Treatment A (uncorrected)", "Treatment A (corrected)",
                                 "Treatment B (uncorrected)", "Treatment B (corrected)"),
        lty = c(2, 1, 2, 1), lwd = c(2,2,2,2), pt.cex = 1, cex = 1,col = c(t1Blue, t1Blue, t0Red, t0Red))
 
-#http://stackoverflow.com/questions/17041246/how-to-add-an-inset-to-topright-of-an-r-plot
-subplot(
-  plot(x = sSim$age, y = sSim$bmi, xlab = "Age (18-65)", ylab = "BMI (10-40)",col=sSim$pca,
-       xaxt = 'n', yaxt = 'n', pch=20, cex.lab=1, cex = .8,
-       mgp=c(0.5,0,0),cex.axis=0.5), x=grconvertX(c(0.5,1), from='npc'),
-       y=grconvertY(c(0.5,1), from='npc'), type='fig', pars=list( mar=c(1.5,1.5,0,0)+0.1, mgp = c(0,0,0)))
+# Subplot setup
+# Calculate margin widths in NDC
+top_margin = grconvertY(1, "lines", "ndc") - grconvertY(0, "lines", "ndc")
+right_margin = grconvertX(1, "lines", "ndc") - grconvertX(0, "lines", "ndc")
+
+# Define normalized dimensions for the subplot based on main plot dimensions
+u <- par("usr")
+v <- c(
+  grconvertX(u[1:2], "user", "ndc"),
+  grconvertY(u[3:4], "user", "ndc")
+)
+insetW = 0.5 * (v[2] - v[1])
+insetH = 0.5 * (v[4] - v[3])
+
+# Adjust subplot_position to be at upper right
+subplot_position <- c(v[2] - insetW, v[2], v[4] - insetH, v[4])
+
+
+# Set parameters for the subplot including margins to show labels
+par(fig=subplot_position, new=TRUE, mar=c(3, 3, 0, 0))
+
+plot(x = sSim$age, y = sSim$bmi, pch=20, col=sSim$pca, xlab="Age (18-65)", ylab="BMI (10-40)", cex.lab=0.7, cex.axis=0.7, cex=0.7, mgp=c(2, 0.7, 0), axes=FALSE)
+axis(1, las=1, tck=-0.02, cex.axis=0.7)  # Ensure ticks are outward
+axis(2, las=2, tck=-0.02, cex.axis=0.7)  # Ensure ticks are outward
+box()
+
+# Restore default parameters
+par(fig=c(0, 1, 0, 1), mar=c(5, 5, 4, 4) + 0.1, new=FALSE)
+
+
 @
 \caption{\label{fig:survCorrection}Treatment bias correction using Local Control on the survival simulation. Because of the treatment assignment bias, patients on A appear to have better outcomes than those on B (dotted lines on Kaplan-Meier plot). However, the Local Control corrected curves (solid lines) show the true treatment effect, that the two treatments are identical, when patients are clustered for similarity of age and BMI. The upper right subfigure shows a scatterplot of age and BMI in the survival simulation. The shading of points indicates the time to failure, with light shading corresponding to a short survival time, while darker points represent a longer survival time. The color of the points represents the treatment group of an observation. Blue and red points indicate whether a patient received treatment A or B, respectively.}
 \end{figure}
@@ -1504,7 +1527,6 @@ and the following packages which have been used throughout the paper are availab
 \url{https://CRAN.R-project.org/}.
 \begin{itemize}
 \item{\pkg{xtable} }{\cite{xtable}}
-\item{\pkg{TeachingDemos} }{\cite{TeachingDemos}}
 \item{\pkg{gplots} }{\cite{gplots}}
 \item{\pkg{dendextend} }{\cite{dendextend}}
 \item{\pkg{data.table} }{\cite{data.table}}
