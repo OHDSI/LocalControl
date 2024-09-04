@@ -1,3 +1,11 @@
+LocalControl 1.1.4
+================
+
+### Minor changes
+* Removed dependency of unmaintained TeachingDemos package for vignette.
+* Fixed DESCRIPTION to point to GitHub repository for code and issues.
+* Fixed other minor CRAN warnings.
+
 LocalControl 1.1.3
 ================
 
