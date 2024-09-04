@@ -19,7 +19,7 @@ SPSnbins(envir, dframe, prnk, qbin, bins = 8)
 }
 \value{
 An output data.frame with new variables inserted:
-\itemize{
+\describe{
   \item{dframe2}{Modified version of the data.frame specified as the first argument to SPSnbins().}
 }
 }

@@ -80,12 +80,12 @@ The maximum number of threads varies depending on the system hardware. Defaults 
 }
 \value{
 A list containing the results from the call to LocalControl.
-\itemize{
-  \item{outcomes} {List containing two dataframes for the average T1 and T0 outcomes within each cluster at each radius.}
-  \item{counts} {List containing two dataframes which hold the number of T1 and T0 patients within each cluster at each radius.}
-  \item{ltds} {Dataframe containing the average LTD within each cluster at each radius.}
-  \item{summary} {Dataframe containing summary statistics about the analysis for each radius.}
-  \item{params} {List containing the parameters used to call LocalControl.}
+\describe{
+  \item{outcomes}{List containing two dataframes for the average T1 and T0 outcomes within each cluster at each radius.}
+  \item{counts}{List containing two dataframes which hold the number of T1 and T0 patients within each cluster at each radius.}
+  \item{ltds}{Dataframe containing the average LTD within each cluster at each radius.}
+  \item{summary}{Dataframe containing summary statistics about the analysis for each radius.}
+  \item{params}{List containing the parameters used to call LocalControl.}
 }
 }
 \description{

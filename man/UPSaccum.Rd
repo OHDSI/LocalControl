@@ -22,7 +22,7 @@ indicator to be treated as a continuous variable determining an average or propo
 \item{scedas}{{Scedasticity assumption: "homo" or "hete"}}
 }
 \value{
-\itemize{
+\describe{
  \item{hiclus}{Name of a diana, agnes or hclust object created by UPShclus().}
  \item{dframe}{Name of data.frame containing the X, t & Y variables.}
  \item{trtm}{Name of treatment factor variable.}

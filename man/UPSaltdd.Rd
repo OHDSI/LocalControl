@@ -41,7 +41,7 @@ indicator to be treated as a continuous variable determining an average or propo
 \item{seed}{{Seed for Monte Carlo random number generator.}}
 }
 \value{
-\itemize{
+\describe{
   \item{dframe}{Name of data.frame containing X, t & Y variables.}
   \item{trtm}{Name of treatment factor variable.}
   \item{yvar}{Name of outcome Y variable.}

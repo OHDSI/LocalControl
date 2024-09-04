@@ -63,7 +63,7 @@ SPSloess
  average would also be of interest.  Thus the SPSloess() output object contains two data frames,
  logrid and lofit, useful in further computations.
 }
-\itemize{
+\describe{
   \item{logrid}{loess grid data.frame containing 11 variables and 100 observations. The PS
    variable contains propensity score "cell means" of 0.005 to 0.995 in steps of 0.010.
    Variables F0, S0 and C0 for treatment 0 and variables F1, S1 and C1 for treatment 1 contain

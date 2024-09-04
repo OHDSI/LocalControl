@@ -4,7 +4,6 @@
 #' They may eventually be completely removed.
 #' @rdname LocalControl-deprecated
 #' @name LocalControl-deprecated
-#' @docType package
 #' @export  localControlNearestNeighbors localControlCompetingRisks plotLocalControlCIF plotLocalControlLTD
 #' @aliases localControlNearestNeighbors localControlCompetingRisks plotLocalControlCIF plotLocalControlLTD
 #' @usage NULL

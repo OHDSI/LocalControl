@@ -185,7 +185,7 @@ newLCCenv <-function(data, dfName = ""){
 #'  key initial step.
 #'
 #' @return An output list object of class UPShclus:
-#' \itemize{
+#' \describe{
 #'  \item{dframe}{Name of data.frame containing baseline X covariates.}
 #'  \item{xvars}{List of names of X variable(s).}
 #'  \item{method}{Hierarchical Clustering Method: "diana", "agnes" or "hclus".}
@@ -273,7 +273,7 @@ newLCCenv <-function(data, dfName = ""){
 #'  thus, more and more compact in covariate X-space.
 #'
 #' @return
-#' \itemize{
+#' \describe{
 #'  \item{hiclus}{Name of a diana, agnes or hclust object created by UPShclus().}
 #'  \item{dframe}{Name of data.frame containing the X, t & Y variables.}
 #'  \item{trtm}{Name of treatment factor variable.}
@@ -357,7 +357,7 @@ newLCCenv <-function(data, dfName = ""){
 #'  optionally, displays this distribution in a "Snowball" plot.
 #'
 #' @return An output list object of class UPSnnltd:
-#' \itemize{
+#' \describe{
 #'  \item{hiclus}{Name of clustering object created by UPShclus().}
 #'  \item{dframe}{Name of data.frame containing X, t & Y variables.}
 #'  \item{trtm}{Name of treatment factor variable.}
@@ -958,7 +958,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  smoothes the LATE distribution when plotted versus within cluster propensity score percentages.
 #'
 #' @return An output list object of class UPSivadj:
-#'  \itemize{
+#'  \describe{
 #'   \item{hiclus}{Name of clustering object created by UPShclus().}
 #'   \item{dframe}{Name of data.frame containing X, t & Y variables.}
 #'   \item{trtm}{Name of treatment factor variable.}
@@ -1124,7 +1124,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  clusters are typically made after first invoking UPSgraph().
 #'
 #' @return
-#' \itemize{
+#' \describe{
 #'   \item{dframe}{Name of data.frame containing X, t & Y variables.}
 #'   \item{trtm}{Name of treatment factor variable.}
 #'   \item{yvar}{Name of outcome Y variable.}
@@ -1766,12 +1766,11 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'    automatically being converted into a "factor" variable; faclev=1 causes a binary indicator
 #'    to be treated as a continuous variable determining a proportion.
 #' @return An output list object of class SPSbalan. The first four are returned with a continuous x-variable. The next 4 are used if it is a factor variable.
-#' \itemize{
-#'   \item {aovdiff}{ANOVA output for marginal test.}
-#'   \item {form2}{Formula for differences in X due to bins and to treatment nested within bins.}
-#'   \item {bindiff}{ANOVA output for the nested within bin model.}
-#'   \item {df3}{Output data.frame containing 3 variables: X-covariate, treatment and bin.}
-#'
+#' \describe{
+#'   \item{aovdiff}{ANOVA output for marginal test.}
+#'   \item{form2}{Formula for differences in X due to bins and to treatment nested within bins.}
+#'   \item{bindiff}{ANOVA output for the nested within bin model.}
+#'   \item{df3}{Output data.frame containing 3 variables: X-covariate, treatment and bin.}
 #'   \item{factab}{Marginal table of counts by X-factor level and treatment.}
 #'   \item{tab}{Three-way table of counts by X-factor level, treatment and bin.}
 #'   \item{cumchi}{Cumulative Chi-Square statistic for interaction in the three-way, nested table.}
@@ -1911,7 +1910,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  average would also be of interest.  Thus the SPSloess() output object contains two data frames,
 #'  logrid and lofit, useful in further computations.
 #' }
-#' \itemize{
+#' \describe{
 #'   \item{logrid}{loess grid data.frame containing 11 variables and 100 observations. The PS
 #'    variable contains propensity score "cell means" of 0.005 to 0.995 in steps of 0.010.
 #'    Variables F0, S0 and C0 for treatment 0 and variables F1, S1 and C1 for treatment 1 contain
@@ -2048,7 +2047,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  predicting treatment choice from patient baseline X characteristics.  SPSlogit uses a call to
 #'  glm()with family = binomial() to fit a logistic regression.}
 #' @return An output list object of class SPSlogit:
-#' \itemize{
+#' \describe{
 #'  \item{dframe}{Name of input data.frame containing X, t & Y variables.}
 #'  \item{dfoutnam}{Name of output data.frame augmented by pfit, prank and qbin variables.}
 #'  \item{trtm}{Name of two-level treatment factor variable.}
@@ -2141,7 +2140,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'   balance, invoke SPSlogit() again to modify the form of your PS logistic model, typically by
 #'   adding interaction and/or curvature terms in continuous X-covariates.
 #' @return An output data.frame with new variables inserted:
-#' \itemize{
+#' \describe{
 #'   \item{dframe2}{Modified version of the data.frame specified as the first argument to SPSnbins().}
 #' }
 #' @references{
@@ -2204,7 +2203,7 @@ function (envir, dframe, trtm, pscr, yvar, faclev = 3, df = 5, spar = NULL, cv =
 #'  Within-Bin Outcome Difference due to Treatment and Averaging these Differences across Bins.
 #'  Graphical displays of SPSoutco() results feature R barplot() invocations.
 #' @return An output list object of class SPSoutco:
-#' \itemize{
+#' \describe{
 #'  \item{dframe}{Name of augmented data.frame written to the appn="" argument of SPSlogit().}
 #'  \item{trtm}{Name of the two-level treatment factor variable.}
 #'  \item{yvar}{Name of an outcome Y variable.}

@@ -23,7 +23,7 @@ be treated as a continuous variable determining an average or proportion.}}
 }
 \value{
 An output list object of class SPSoutco:
-\itemize{
+\describe{
  \item{dframe}{Name of augmented data.frame written to the appn="" argument of SPSlogit().}
  \item{trtm}{Name of the two-level treatment factor variable.}
  \item{yvar}{Name of an outcome Y variable.}

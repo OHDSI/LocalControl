@@ -27,7 +27,7 @@ appn=="", else save augmented data.frame to name specified within a non-blank ap
 }
 \value{
 An output list object of class SPSlogit:
-\itemize{
+\describe{
  \item{dframe}{Name of input data.frame containing X, t & Y variables.}
  \item{dfoutnam}{Name of output data.frame augmented by pfit, prank and qbin variables.}
  \item{trtm}{Name of two-level treatment factor variable.}

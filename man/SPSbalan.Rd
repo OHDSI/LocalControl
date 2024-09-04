@@ -25,12 +25,11 @@ to be treated as a continuous variable determining a proportion.}
 }
 \value{
 An output list object of class SPSbalan. The first four are returned with a continuous x-variable. The next 4 are used if it is a factor variable.
-\itemize{
-  \item {aovdiff}{ANOVA output for marginal test.}
-  \item {form2}{Formula for differences in X due to bins and to treatment nested within bins.}
-  \item {bindiff}{ANOVA output for the nested within bin model.}
-  \item {df3}{Output data.frame containing 3 variables: X-covariate, treatment and bin.}
-
+\describe{
+  \item{aovdiff}{ANOVA output for marginal test.}
+  \item{form2}{Formula for differences in X due to bins and to treatment nested within bins.}
+  \item{bindiff}{ANOVA output for the nested within bin model.}
+  \item{df3}{Output data.frame containing 3 variables: X-covariate, treatment and bin.}
   \item{factab}{Marginal table of counts by X-factor level and treatment.}
   \item{tab}{Three-way table of counts by X-factor level, treatment and bin.}
   \item{cumchi}{Cumulative Chi-Square statistic for interaction in the three-way, nested table.}

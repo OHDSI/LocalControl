@@ -13,7 +13,7 @@ UPSivadj(envir, numclust)
 }
 \value{
 An output list object of class UPSivadj:
- \itemize{
+ \describe{
   \item{hiclus}{Name of clustering object created by UPShclus().}
   \item{dframe}{Name of data.frame containing X, t & Y variables.}
   \item{trtm}{Name of treatment factor variable.}
