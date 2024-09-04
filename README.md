@@ -15,6 +15,15 @@ Getting Involved
 * Developer questions/comments/feedback: <a href="http://forums.ohdsi.org/c/developers">OHDSI Forum</a>
 * We use the <a href="https://github.com/OHDSI/LocalControl/issues">GitHub issue tracker</a> for all bugs/issues/enhancements
 
+Building considerations for CRAN
+================================
+Given we have a large manual, building a compressed pdf of the vignette may be required to not have the submission rejected.
+Within RStudio this can be done via:
+
+```r
+devtools::build(args = c('--compact-vignettes=both'))
+```
+
 License
 =======
 LocalControl is licensed under Apache License 2.0
