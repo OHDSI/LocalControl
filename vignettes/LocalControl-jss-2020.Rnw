@@ -100,7 +100,7 @@ options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
 }
 <<init_libs_vars_calcs, echo = F, eval = T>>=
 # toggle long computations for fast pdf building
-doCalcs = F
+doCalcs = T
 
 # load packages
 if(!require("data.table")){
@@ -435,6 +435,9 @@ if (doCalcs) {
   localOutcomes = data.table(lindLC$UPSnnltd30$binmean)
   localOutcomes$LTDobs = localOutcomes$`abcix = 1` - localOutcomes$`abcix = 0`
 
+  # Convert 'BIN' from factor to integer -- old versions of R didn't care
+  localOutcomes[, BIN := as.integer(as.character(BIN))]
+  
   setkey(lind, c)        
   setkey(localOutcomes, BIN) 
   lind = lind[localOutcomes, nomatch = NA] 
