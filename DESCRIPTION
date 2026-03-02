@@ -2,7 +2,7 @@ Package: LocalControl
 Type: Package
 Title: Nonparametric Methods for Generating High Quality Comparative
         Effectiveness Evidence
-Version: 1.1.5
+Version: 1.1.6
 Date: 2026-03-02
 Authors@R: c(
   person(given = "Nicolas R.", family = "Lauve", role = "aut", comment=c(ORCID="0000-0002-9348-0319")),

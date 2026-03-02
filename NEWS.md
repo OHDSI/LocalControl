@@ -1,3 +1,10 @@
+LocalControl 1.1.6
+================
+
+### Minor changes
+* Rebuilt vignette PDF to fix invalid URLs flagged by CRAN link checks.
+* Added `jss.bst` to `inst/vignette-source/` for self-contained vignette rebuilds.
+
 LocalControl 1.1.5
 ================
 
