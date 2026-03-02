@@ -96,7 +96,7 @@ options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
   1 University of New Mexico\\
   Albuquerque, NM 87131, USA\\
   E-mail: \email{cglambert[at]salud.unm.edu}\\
-  URL: \url{http://christophelambert.org}
+  URL: \url{https://datascience.unm.edu/faculty/christophe-g-lambert/}
 }
 <<init_libs_vars_calcs, echo = F, eval = T>>=
 # toggle long computations for fast pdf building
