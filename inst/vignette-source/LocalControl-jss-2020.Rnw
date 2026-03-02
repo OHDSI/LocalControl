@@ -102,43 +102,16 @@ options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
 # toggle long computations for fast pdf building
 doCalcs = T
 
-# load packages
-if(!require("data.table")){
-   install.packages("data.table")
-   library("data.table")
-}
-if(!require("colorspace")){
-   install.packages("colorspace")
-   library("colorspace")
-}
-if(!require("RColorBrewer")){
-   install.packages("RColorBrewer")
-   library("RColorBrewer")
-}
-if(!require("gridExtra")){
-   install.packages("gridExtra")
-   library("gridExtra")
-}
-if(!require("ggplot2")){
-   install.packages("ggplot2")
-   library("ggplot2")
-}
-if(!require("rpart")){
-   install.packages("rpart")
-   library("rpart")
-}
-if(!require("rpart.plot")){
-   install.packages("rpart.plot")
-   library("rpart.plot")
-}
-if(!require("LocalControl")){
-   install.packages("LocalControl")
-   library("LocalControl")
-}
-if(!require("xtable")){
-   install.packages("xtable")
-   library("xtable")
-}
+# load packages (all listed in DESCRIPTION Suggests)
+library("data.table")
+library("colorspace")
+library("RColorBrewer")
+library("gridExtra")
+library("ggplot2")
+library("rpart")
+library("rpart.plot")
+library("LocalControl")
+library("xtable")
 
 # frequently used variables
 data(lindner)

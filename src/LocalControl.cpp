@@ -11,6 +11,7 @@
 #include <Rcpp.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <atomic>
 
 using namespace Rcpp;
 
@@ -210,8 +211,8 @@ protected:
 private:
   pthread_mutex_t lMutex;
   pthread_mutex_t tMutex;
-  volatile int loopCounter;
-  volatile int threadCounter;
+  std::atomic<int> loopCounter;
+  std::atomic<int> threadCounter;
 
   void lockThreads(){
     pthread_mutex_lock(&lMutex);

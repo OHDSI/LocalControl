@@ -1,3 +1,15 @@
+LocalControl 1.1.5
+================
+
+### Minor changes
+* Replaced deprecated `volatile int` with `std::atomic<int>` for thread
+  synchronization in C++ code, fixing `-Wdeprecated-volatile` compiler warnings
+  with newer Clang/GCC versions.
+* Switched to static pre-built PDF vignette using `R.rsp::asis`, resolving
+  vignette build warnings. Vignette source (`.Rnw`, `.bib`, cached `.rds` files)
+  moved to `inst/vignette-source/` for optional manual rebuilding.
+* Removed `install.packages()` fallbacks from vignette source code.
+
 LocalControl 1.1.4
 ================
 
