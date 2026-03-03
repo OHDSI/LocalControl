@@ -1,3 +1,8 @@
+LocalControl 1.1.7
+================
+### Minor changes
+* Cleaned up the vignette bibliography to fix a broken hyperlink and replace some others  with more durable hyperlinks.
+
 LocalControl 1.1.6
 ================
 
